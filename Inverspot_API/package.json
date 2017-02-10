@@ -1,0 +1,24 @@
+{
+  "name": "inverspot-api",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://LuisEnVilla@bitbucket.org/3la/api_node_docker.git"
+  },
+  "keywords": [
+    "node",
+    "api",
+    "express"
+  ],
+  "author": "LuisEnVilla",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/3la/api_node_docker#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}
