@@ -1,4 +1,5 @@
 FROM alpine:3.4
+MAINTAINER villak.hardware@gmail.com
 
 ENV NPM_CONFIG_LOGLEVEL info
 ENV NODE_VERSION 7.5.0
@@ -42,4 +43,11 @@ RUN adduser -D -u 1000 node \
     && rm -Rf "node-v$NODE_VERSION" \
     && rm "node-v$NODE_VERSION.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt
 
-CMD [ "node" ]
+WORKDIR /usr/src/app
+COPY Inverspot_API/ .
+RUN npm install
+
+VOLUME ["/usr/src/app"]
+
+EXPOSE 8080
+CMD ["node", "index.js"]
