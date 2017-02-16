@@ -1,0 +1,14 @@
+{
+  "dbCloud":{
+    "port"      : 53699,
+    "database"  : "inverspot",
+    "address"   : "ds153699.mlab.com",
+    "user"    : "is_developer",
+    "password": "inverspot"
+  },
+  "dbLocal":{
+    "port"      : 27017,
+    "database"  : "inverspot",
+    "address"   : "is-db"
+  }
+}
