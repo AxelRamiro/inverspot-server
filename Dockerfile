@@ -50,4 +50,4 @@ RUN npm install
 VOLUME ["/usr/src/app"]
 
 EXPOSE 8080
-CMD ["node", "./bin/www"]
+CMD ["node", "index.js"]
