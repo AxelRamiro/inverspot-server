@@ -9,9 +9,11 @@
 ## Create Docker Image
 ```
 docker build -t [name]  .
+docker build -t isapi .
 ```
 ## Docker started
 ```
-docker run -p 8080:8080 -d --name is_api -v ~/Documents/Inverspot/api_node_docker/Inverspot_API:/usr/src/app -t isapi
+docker run -p [Puerto Externo:Puerto Interno] -d --name [Nombre Docker] --link [Nombre Docker db : Nombre interno] -v [Directorio Local:Directorio interno] -t [nombre de la imagen]
+docker run -p 8080:8080 -d --name is_api --link is-mongodb:is-mongodb -v ~/Documents/Inverspot/api_node_docker/Inverspot_API:/usr/src/app -t isapi
 ```
 > NOTA: Usando ALPINE no se puede ejecutar "npm start", por lo que el iniciar el docker se ejecuta la aplicación como "node index.js", esto implica que tenemos que instalar localmente y los módulos necesarios, y el volumen de Docker incluirá (no es lo recomendable) node_modules.

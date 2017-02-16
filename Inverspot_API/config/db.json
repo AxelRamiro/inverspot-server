@@ -9,6 +9,6 @@
   "dbLocal":{
     "port"      : 27017,
     "database"  : "inverspot",
-    "address"   : "is-db"
+    "address"   : "is-mongodb"
   }
 }
