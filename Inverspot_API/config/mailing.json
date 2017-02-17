@@ -1,0 +1,12 @@
+{
+  "connection" : {
+    "host"   : "smtp.gmail.com",
+    "port"   : 465,
+    "secure" : true,
+    "auth"   : {
+      "user" : "axel.ramiro.92@gmail.com",
+      "pass" : "fwdajvasjzpvboqu"
+    }
+  },
+  "from" : "\"Inverspot\" <hola@inverspot.mx>"
+}

@@ -34,8 +34,10 @@ app.get ('/', (req,res) => {
   res.send ('Hello Word!!')
 })
 
+const sendMail = require('./src/mailing')(config)
+
 //Router
-require('./src/api')(router,mongoose,bcrypt,jwt,config)
+require('./src/api')(router,mongoose,bcrypt,jwt,config,sendMail)
 app.use('/api', authenticate, router)
 //  /Router
 

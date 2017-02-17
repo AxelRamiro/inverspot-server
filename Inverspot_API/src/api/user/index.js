@@ -1,5 +1,5 @@
-module.exports = (router, User) => {
-  require('./create')(router,User)
+module.exports = (router, User, sendMail) => {
+  require('./create')(router,User, sendMail)
   require('./update')(router,User)
   require('./delete')(router,User)
   require('./find')(router,User)
