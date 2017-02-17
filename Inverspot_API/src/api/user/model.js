@@ -6,7 +6,7 @@ module.exports = (mongoose) => {
     telephone:      Number,
     password:       { type: String, required: true},
     level:          { type: String, required: true},
-    status:         { type: String, required: true},
+    status:         { type: String, default: 'inactive'},
     // /Genaeral User Data
     state:          String,
     asesorId:       {type:mongoose.Schema.Types.ObjectId, ref: 'user'},
@@ -57,5 +57,5 @@ module.exports = (mongoose) => {
     }
     //...
   })
-  return mongoose.model('user', userSchema)
+  return mongoose.model('User', userSchema)
 }

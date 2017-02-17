@@ -1,7 +1,9 @@
-module.exports = (router, user) => {
+module.exports = (router, User) => {
   router.post('/user', (req, res) => {
-    console.log('/api/user')
-    res.send ('API/USER')
-    //...
+    let user = new User (req.body)
+    user.save ((err, resUser) => {
+      if (err) return res.status(500).send(err.message)
+      res.status(200).jsonp(resUser)
+    })
   })
 }

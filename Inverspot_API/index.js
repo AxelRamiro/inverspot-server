@@ -3,6 +3,7 @@
 const express = require('express')
 const config = require('./config')
 const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
 // /dependencies
 
 const router = express.Router()
@@ -11,6 +12,12 @@ const app = express()
 mongoose.connect(config.db.dbUri)
 
 app.set ('port', process.env.PORT || config.server.port)
+app.use (bodyParser.urlencoded({
+  extended: false
+}))
+app.use(bodyParser.json({
+  limit: '2mb'
+}))
 
 app.get ('/', (req,res) => {
   res.send ('Hello Word!!')
