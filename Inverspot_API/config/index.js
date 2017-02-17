@@ -6,5 +6,6 @@ db.dbUri = `mongodb://${db.dbCloud.user}:${db.dbCloud.password}@${db.dbCloud.add
 
 module.exports = {
   server: require('./server.json'),
-  db: db
+  db: db,
+  auth: require('./auth.json')
 }

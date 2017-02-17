@@ -1,5 +1,5 @@
-module.exports = (mongoose) => {
-  userSchema = new mongoose.Schema({
+module.exports = (mongoose,bcrypt) => {
+  let userSchema = new mongoose.Schema({
     // Genaeral User Data
     name:           String,
     email:          { type: String, required: true},
@@ -43,7 +43,7 @@ module.exports = (mongoose) => {
         acoountNumber: Number,
         standardizedBankKey: Number,
         bank: String,
-        accountHolder: String,
+        acountHolder: String,
       },
       beneficiaries:[{
         name: String,
@@ -55,7 +55,21 @@ module.exports = (mongoose) => {
       }],
       comments: String
     }
-    //...
+  },{timestamps: true})
+
+  userSchema.pre('save', function(next) {
+    if (this.isModified('password') || this.isNew ) {
+      this.password = bcrypt.hashSync(this.password.trim(), 10)
+      return next()
+    }
   })
+
+  userSchema.methods.comparePassword = function(pass, cb) {
+    bcrypt.compare(pass,this.password, (err,isMatch) => {
+      if (err) return cb(err)
+      return cb(null,isMatch)
+    })
+  }
+
   return mongoose.model('User', userSchema)
 }

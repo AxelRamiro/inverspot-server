@@ -4,6 +4,9 @@ const express = require('express')
 const config = require('./config')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
+const jwt = require('jsonwebtoken')
+const morgan = require('morgan')
+const bcrypt = require('bcrypt')
 // /dependencies
 
 const router = express.Router()
@@ -11,16 +14,17 @@ const app = express()
 
 mongoose.connect(config.db.dbUri)
 
-app.set ('port', process.env.PORT || config.server.port)
-app.use (bodyParser.urlencoded({extended: false}))
+app.set('port', process.env.PORT || config.server.port)
+app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json({limit: '2mb'}))
+app.use(morgan('dev'))
 
 app.get ('/', (req,res) => {
   res.send ('Hello Word!!')
 })
 
 //Router
-require('./src/api')(router,mongoose)
+require('./src/api')(router,mongoose,bcrypt,jwt,config)
 app.use('/api', router)
 //  /Router
 
