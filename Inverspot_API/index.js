@@ -12,12 +12,8 @@ const app = express()
 mongoose.connect(config.db.dbUri)
 
 app.set ('port', process.env.PORT || config.server.port)
-app.use (bodyParser.urlencoded({
-  extended: false
-}))
-app.use(bodyParser.json({
-  limit: '2mb'
-}))
+app.use (bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json({limit: '2mb'}))
 
 app.get ('/', (req,res) => {
   res.send ('Hello Word!!')
