@@ -17,7 +17,7 @@ module.exports = (router, User, jwt, config) => {
 
         return res.status(200).jsonp({
           user: user,
-          token: `JWT ${token}`
+          token: `Bearer ${token}`
         })
 
       })

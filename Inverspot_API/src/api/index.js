@@ -4,6 +4,7 @@ module.exports = (router,mongoose,bcrypt,jwt,config) => {
   // /Models
 
   // Routers
+  router.use
   require('./user')(router,User)
   require('./auth')(router, User, jwt,config)
   // /Routers
