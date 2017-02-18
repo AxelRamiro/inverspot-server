@@ -11,6 +11,8 @@
 docker build -t [name]  .
 docker build -t isapi .
 ```
+> NOTA: Si vamos a usar el volumen, ejecutar "npm install" localmente antes de todo ya que el volumen remplaza por completo el directorio de la app
+
 ## Docker started
 ```
 docker run -p [Puerto Externo:Puerto Interno] -d --name [Nombre Docker] --link [Nombre Docker db : Nombre interno] -v [Directorio Local:Directorio interno] -t [nombre de la imagen]

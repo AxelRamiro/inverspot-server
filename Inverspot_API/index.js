@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const jwt = require('jsonwebtoken')
 const morgan = require('morgan')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 const jwtMiddleware = require('express-jwt')
 // /dependencies
 const router = express.Router()
@@ -30,6 +30,10 @@ const authenticate = jwtMiddleware({
  }
 }).unless({path: ['/api/auth']})
 
+const errorAuthenticate = (err, req, res, next) => {
+  if (err.name === 'UnauthorizedError') res.status(401).send('Invalid token...')
+}
+
 app.get ('/', (req,res) => {
   res.send ('Hello Word!!')
 })
@@ -38,7 +42,7 @@ const sendMail = require('./src/mailing')(config)
 
 //Router
 require('./src/api')(router,mongoose,bcrypt,jwt,config,sendMail)
-app.use('/api', authenticate, router)
+app.use('/api', authenticate,errorAuthenticate, router)
 //  /Router
 
 app.listen (app.get ('port'), (err) => {
