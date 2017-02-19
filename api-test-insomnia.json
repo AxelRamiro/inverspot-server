@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2017-02-19T01:27:18.299Z",
+	"__export_date": "2017-02-19T02:26:08.676Z",
 	"__export_source": "insomnia.desktop.app:v4.2.14",
 	"resources": [
 		{
@@ -71,6 +71,16 @@
 			"modified": 1487466472772,
 			"created": 1487466456358,
 			"name": "Builder",
+			"environment": {},
+			"metaSortKey": -1487458838234,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_dcb04bd3414046e78ae56d08543a72ef",
+			"parentId": "wrk_dc77cfd643024e74b625a939f0186020",
+			"modified": 1487470361439,
+			"created": 1487470349071,
+			"name": "Investment",
 			"environment": {},
 			"metaSortKey": -1487458838234,
 			"_type": "request_group"
@@ -252,7 +262,7 @@
 		{
 			"_id": "req_93981d42ef124314b4b9bfa10b31b142",
 			"parentId": "fld_2bf8bb899f414efbb732fb2fa960d6fd",
-			"modified": 1487460367905,
+			"modified": 1487470525869,
 			"created": 1487459276216,
 			"url": "{{baseURL}}/property",
 			"name": "Find Property",
@@ -268,12 +278,13 @@
 				},
 				{
 					"name": "query",
-					"value": "{\"limit\":2}"
+					"value": "{\"limit\":2}",
+					"disabled": true
 				},
 				{
 					"name": "select",
 					"value": "title -_id address description",
-					"disabled": false
+					"disabled": true
 				}
 			],
 			"headers": [
@@ -443,6 +454,125 @@
 			"body": {
 				"mimeType": "application/json",
 				"text": "{\n\t\t\"_id\": \"58a8f2321ef0ce139e7d9e11\",\n\t\t\"name\": \"Lorem\",\n\t\t\"yearsWork\": 5,\n\t\t\"completedWorks\": 10,\n\t\t\"website\": \"www.google.com\"\n\t}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"name": "Authorization",
+					"value": "{{token}}"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1487458858277,
+			"_type": "request"
+		},
+		{
+			"_id": "req_166ade97af7f4a429bf0ec935ea6db7c",
+			"parentId": "fld_dcb04bd3414046e78ae56d08543a72ef",
+			"modified": 1487470636957,
+			"created": 1487470349083,
+			"url": "{{baseURL}}/investment",
+			"name": "Create Investment",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"sharesNumber\": 20,\n\t\"status\": \"investment\",\n\t\"userId\": \"58a6f68199aa4e2c92bbc634\",\n\t\"propertyId\": \"58a8dea55f788311b0dd21c1\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"name": "Authorization",
+					"value": "{{token}}"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1487458858279,
+			"_type": "request"
+		},
+		{
+			"_id": "req_4354b9827da14b7392cce23ed19506a3",
+			"parentId": "fld_dcb04bd3414046e78ae56d08543a72ef",
+			"modified": 1487470899295,
+			"created": 1487470349088,
+			"url": "{{baseURL}}/investment",
+			"name": "Find Investment",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [
+				{
+					"name": "filter",
+					"value": "{\"userId\": \"58a6f68199aa4e2c92bbc634\"}",
+					"disabled": false
+				},
+				{
+					"name": "query",
+					"value": "{\"limit\":2}",
+					"disabled": true
+				},
+				{
+					"name": "select",
+					"value": "-_id sharesNumber status propertyId",
+					"disabled": true
+				}
+			],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "{{token}}"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1487458858278,
+			"_type": "request"
+		},
+		{
+			"_id": "req_0603d9182c7d4076997ed9ca76ebe6d2",
+			"parentId": "fld_dcb04bd3414046e78ae56d08543a72ef",
+			"modified": 1487470935408,
+			"created": 1487470349093,
+			"url": "{{baseURL}}/investment",
+			"name": "Update Investment",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\t\"_id\": \"58a8ffd9c8441115b545d66b\",\n\t\t\"sharesNumber\": 80,\n\t\t\"status\": \"investment\",\n\t\t\"userId\": \"58a6f68199aa4e2c92bbc634\",\n\t\t\"propertyId\": \"58a8dea55f788311b0dd21c1\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"name": "Authorization",
+					"value": "{{token}}"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1487458858278,
+			"_type": "request"
+		},
+		{
+			"_id": "req_afd1af4a79de4f0f9cb555962722a30e",
+			"parentId": "fld_dcb04bd3414046e78ae56d08543a72ef",
+			"modified": 1487471061740,
+			"created": 1487470349098,
+			"url": "{{baseURL}}/investment",
+			"name": "Delete Investment",
+			"method": "DELETE",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"__v\": 0,\n\t\"updatedAt\": \"2017-02-19T02:24:13.465Z\",\n\t\"createdAt\": \"2017-02-19T02:24:13.465Z\",\n\t\"sharesNumber\": 20,\n\t\"status\": \"investment\",\n\t\"userId\": \"58a6f68199aa4e2c92bbc634\",\n\t\"propertyId\": \"58a8dea55f788311b0dd21c1\",\n\t\"_id\": \"58a901cdf4bf791650439049\"\n}"
 			},
 			"parameters": [],
 			"headers": [
