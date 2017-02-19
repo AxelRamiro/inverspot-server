@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2017-02-19T03:22:37.012Z",
+	"__export_date": "2017-02-19T22:36:05.220Z",
 	"__export_source": "insomnia.desktop.app:v4.2.14",
 	"resources": [
 		{
@@ -98,14 +98,14 @@
 		{
 			"_id": "req_cb2cab4a65734a59b0412854036721c4",
 			"parentId": "fld_612635bc5d6f4a0d86199bd6c28da4fb",
-			"modified": 1487459317509,
+			"modified": 1487542229214,
 			"created": 1487300223912,
 			"url": "{{baseURL}}/user",
 			"name": "New User",
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"name\":\"Fredy\",\n\t\"email\": \"fredy4333@gmail.com\",\n\t\"telephone\":7721199947,\n\t\"password\":\"123456\",\n\t\"level\": \"admin\"\n}"
+				"text": "{\n\t\"name\":\"Pruebota 22 UUID\",\n\t\"email\": \"uuid@gmail.com\",\n\t\"telephone\":7721199947,\n\t\"password\":\"123456\",\n\t\"level\": \"admin\"\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -125,16 +125,22 @@
 		{
 			"_id": "req_123991f76e8f4bbab88ff0d45b87bfb4",
 			"parentId": "fld_612635bc5d6f4a0d86199bd6c28da4fb",
-			"modified": 1487461896213,
+			"modified": 1487543076878,
 			"created": 1487303038284,
 			"url": "{{baseURL}}/user",
 			"name": "Update User",
 			"method": "PUT",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\t\"_id\": \"58a6f68199aa4e2c92bbc634\",\n\t\t\"updatedAt\": \"2017-02-18T08:58:33.720Z\",\n\t\t\"createdAt\": \"2017-02-17T13:11:29.261Z\",\n\t\t\"name\": \"Dev 3 - Luis Villa\",\n\t\t\"email\": \"villak@hotmail.es\",\n\t\t\"telephone\": 7721199947,\n\t\t\"password\": \"$2a$10$EdFOVNiECpA4SaPnTn20YOxyHqnwTzNBc2DPdglM5VcSBO/Lig5/e\",\n\t\t\"level\": \"admin\",\n\t\t\"__v\": 0,\n\t\t\"invesmentData\": {\n\t\t\t\"beneficiaries\": []\n\t\t},\n\t\t\"status\": \"active\"\n\t}"
+				"text": "{\n\t\"name\": \"Prueba UUID\",\n\t\"email\": \"uuid@gmail.com\",\n\t\"telephone\": 7721199947,\n\t\"password\": \"asdasdsd\",\n\t\"level\": \"admin\",\n\t\"_id\": \"58aa1a596cd42e06fb626943\",\n\t\"invesmentData\": {\n\t\t\"beneficiaries\": []\n\t},\n\t\"status\": \"active\"\n}"
 			},
-			"parameters": [],
+			"parameters": [
+				{
+					"name": "select",
+					"value": "-_id",
+					"disabled": false
+				}
+			],
 			"headers": [
 				{
 					"name": "Content-Type",

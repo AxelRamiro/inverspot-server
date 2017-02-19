@@ -7,6 +7,6 @@ module.exports = (config) =>{
     let mail = require(`./templates/${template}`)(params)
     options.html = mail
     options.from = config.mailing.from
-    transporter.sendMail(options, cb)
+    //transporter.sendMail(options, cb)
   }
 }

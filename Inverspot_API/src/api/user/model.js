@@ -1,3 +1,5 @@
+const uuid = require('uuid')
+
 module.exports = (mongoose,bcrypt) => {
   let userSchema = new mongoose.Schema({
     // Genaeral User Data
@@ -7,6 +9,7 @@ module.exports = (mongoose,bcrypt) => {
     password:       { type: String, required: true},
     level:          { type: String, required: true},
     status:         { type: String, default: 'inactive'},
+    checker:        String,
     // /Genaeral User Data
     state:          String,
     asesorId:       {type:mongoose.Schema.Types.ObjectId, ref: 'User'},
@@ -58,10 +61,19 @@ module.exports = (mongoose,bcrypt) => {
   },{timestamps: true})
 
   userSchema.pre('save', function(next) {
-    if (this.isModified('password') || this.isNew ) {
-      this.password = bcrypt.hashSync(this.password.trim(), 10)
+
+    if (this.isModified('password') || this.isNew ) this.password = bcrypt.hashSync(this.password.trim(), 10)
+    if (this.isModified('status') || this.isNew ) this.checker = (this.status == 'inactive') ? uuid.v4() : null
+
+    return next()
+  })
+
+  userSchema.pre('findOneAndUpdate', function(next) {
+
+    if (this._update.password) this._update.password = bcrypt.hashSync( this._update.password.trim(), 10)
+    if (this._update.status) this._update.checker = (this._update.status == 'inactive') ? uuid.v4() : null
+
       return next()
-    }
   })
 
   userSchema.methods.comparePassword = function(pass, cb) {
