@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2017-02-18T23:58:51.535Z",
+	"__export_date": "2017-02-19T01:27:18.299Z",
 	"__export_source": "insomnia.desktop.app:v4.2.14",
 	"resources": [
 		{
@@ -61,6 +61,16 @@
 			"modified": 1487458838234,
 			"created": 1487458838234,
 			"name": "Property",
+			"environment": {},
+			"metaSortKey": -1487458838234,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_337525d065554dc0bbdab7b12ed36887",
+			"parentId": "wrk_dc77cfd643024e74b625a939f0186020",
+			"modified": 1487466472772,
+			"created": 1487466456358,
+			"name": "Builder",
 			"environment": {},
 			"metaSortKey": -1487458838234,
 			"_type": "request_group"
@@ -314,6 +324,125 @@
 			"body": {
 				"mimeType": "application/json",
 				"text": "{\n\t\"title\": \"Lorem Property\",\n\t\"description\": \"Lorem Description...\",\n\t\"image\": \"/asads/asdasd/asd.jpg\",\n\t\"_id\": \"58a8d3873daac210044d6a1d\",\n\t\"address\": {\n\t\t\"street\": \"lorem\",\n\t\t\"number\": \"20\",\n\t\t\"suburb\": \"colonia\",\n\t\t\"city\": \"ciudad\",\n\t\t\"zipCode\": 42330,\n\t\t\"coordinates\": \"132132132,45454545\"\n\t}\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"name": "Authorization",
+					"value": "{{token}}"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1487458858277,
+			"_type": "request"
+		},
+		{
+			"_id": "req_bf3f25f7a3e34e808128343ff66f1645",
+			"parentId": "fld_337525d065554dc0bbdab7b12ed36887",
+			"modified": 1487467071672,
+			"created": 1487466456369,
+			"url": "{{baseURL}}/builder",
+			"name": "Create Builder",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"name\": \"Google\",\n\t\"yearsWork\": 5,\n\t\"completedWorks\": 10,\n\t\"website\": \"www.google.com\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"name": "Authorization",
+					"value": "{{token}}"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1487458858279,
+			"_type": "request"
+		},
+		{
+			"_id": "req_250333afc84145c8b30f44c68a567a86",
+			"parentId": "fld_337525d065554dc0bbdab7b12ed36887",
+			"modified": 1487467393840,
+			"created": 1487466456374,
+			"url": "{{baseURL}}/builder",
+			"name": "Find Builder",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [
+				{
+					"name": "filter",
+					"value": "{\"name\": \"Google\"}",
+					"disabled": true
+				},
+				{
+					"name": "query",
+					"value": "{\"limit\":2}",
+					"disabled": true
+				},
+				{
+					"name": "select",
+					"value": "name -_id yearsWork website",
+					"disabled": true
+				}
+			],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "{{token}}"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1487458858278,
+			"_type": "request"
+		},
+		{
+			"_id": "req_09416e68f02b4943bb33bada0d2c8930",
+			"parentId": "fld_337525d065554dc0bbdab7b12ed36887",
+			"modified": 1487467328105,
+			"created": 1487466456380,
+			"url": "{{baseURL}}/builder",
+			"name": "Update Builder",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\t\"_id\": \"58a8f2411ef0ce139e7d9e12\",\n\t\t\"name\": \"Google\",\n\t\t\"yearsWork\": 30,\n\t\t\"completedWorks\": 10,\n\t\t\"website\": \"www.google.com\"\n\t}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"name": "Authorization",
+					"value": "{{token}}"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1487458858278,
+			"_type": "request"
+		},
+		{
+			"_id": "req_d82ad60a80574224b968f2f07df1fb72",
+			"parentId": "fld_337525d065554dc0bbdab7b12ed36887",
+			"modified": 1487467593558,
+			"created": 1487466456385,
+			"url": "{{baseURL}}/builder",
+			"name": "Delete Builder",
+			"method": "DELETE",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\t\"_id\": \"58a8f2321ef0ce139e7d9e11\",\n\t\t\"name\": \"Lorem\",\n\t\t\"yearsWork\": 5,\n\t\t\"completedWorks\": 10,\n\t\t\"website\": \"www.google.com\"\n\t}"
 			},
 			"parameters": [],
 			"headers": [
