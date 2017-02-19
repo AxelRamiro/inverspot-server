@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2017-02-19T02:26:08.676Z",
+	"__export_date": "2017-02-19T03:22:37.012Z",
 	"__export_source": "insomnia.desktop.app:v4.2.14",
 	"resources": [
 		{
@@ -81,6 +81,16 @@
 			"modified": 1487470361439,
 			"created": 1487470349071,
 			"name": "Investment",
+			"environment": {},
+			"metaSortKey": -1487458838234,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_f0807c648a4b4514b1fb34aa9b4a0b3a",
+			"parentId": "wrk_dc77cfd643024e74b625a939f0186020",
+			"modified": 1487473741139,
+			"created": 1487473721741,
+			"name": "Work Progress",
 			"environment": {},
 			"metaSortKey": -1487458838234,
 			"_type": "request_group"
@@ -573,6 +583,125 @@
 			"body": {
 				"mimeType": "application/json",
 				"text": "{\n\t\"__v\": 0,\n\t\"updatedAt\": \"2017-02-19T02:24:13.465Z\",\n\t\"createdAt\": \"2017-02-19T02:24:13.465Z\",\n\t\"sharesNumber\": 20,\n\t\"status\": \"investment\",\n\t\"userId\": \"58a6f68199aa4e2c92bbc634\",\n\t\"propertyId\": \"58a8dea55f788311b0dd21c1\",\n\t\"_id\": \"58a901cdf4bf791650439049\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"name": "Authorization",
+					"value": "{{token}}"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1487458858277,
+			"_type": "request"
+		},
+		{
+			"_id": "req_3894f0f4dbb2418e9758ef1722f4a43e",
+			"parentId": "fld_f0807c648a4b4514b1fb34aa9b4a0b3a",
+			"modified": 1487474419990,
+			"created": 1487473721753,
+			"url": "{{baseURL}}/work-progress",
+			"name": "Create Work Progress",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"year\":2013,\n\t\"month\": \"Marzo\",\n\t\"description\": \"Lorem Description...\",\n\t\"photo\":[\"/asdasd/asdasd.jpg\",\"asdasd/asdasd.jpg\"],\n\t\"propertyId\": \"58a8dea55f788311b0dd21c1\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"name": "Authorization",
+					"value": "{{token}}"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1487458858279,
+			"_type": "request"
+		},
+		{
+			"_id": "req_7e477cdb1f5b434cb854d19477dd28c4",
+			"parentId": "fld_f0807c648a4b4514b1fb34aa9b4a0b3a",
+			"modified": 1487474297070,
+			"created": 1487473721757,
+			"url": "{{baseURL}}/work-progress",
+			"name": "Find Work Progress",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [
+				{
+					"name": "filter",
+					"value": "{\"propertyId\": \"58a8dea55f788311b0dd21c1\"}",
+					"disabled": false
+				},
+				{
+					"name": "query",
+					"value": "{\"limit\":2}",
+					"disabled": true
+				},
+				{
+					"name": "select",
+					"value": "-_id year description photo month",
+					"disabled": true
+				}
+			],
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "{{token}}"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1487458858278.5,
+			"_type": "request"
+		},
+		{
+			"_id": "req_86584984ddce4de2bce2ef4a46c6ecd2",
+			"parentId": "fld_f0807c648a4b4514b1fb34aa9b4a0b3a",
+			"modified": 1487474320981,
+			"created": 1487473721767,
+			"url": "{{baseURL}}/work-progress",
+			"name": "Update Work Progress",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\t\"_id\": \"58a90d2503180a1838b1ae8e\",\n\t\t\"year\": 2000,\n\t\t\"month\": \"junio\",\n\t\t\"description\": \"Lorem Description...\",\n\t\t\"propertyId\": \"58a8dea55f788311b0dd21c1\",\n\t\t\"photo\": [\n\t\t\t\"/asdasd/asdasd.jpg\",\n\t\t\t\"asdasd/asdasd.jpg\"\n\t\t]\n\t}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"name": "Authorization",
+					"value": "{{token}}"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1487458858278,
+			"_type": "request"
+		},
+		{
+			"_id": "req_7a8dbe130ec343abb8fa978d68a76ae8",
+			"parentId": "fld_f0807c648a4b4514b1fb34aa9b4a0b3a",
+			"modified": 1487474490230,
+			"created": 1487473721771,
+			"url": "{{baseURL}}/work-progress",
+			"name": "Delete Work Progress",
+			"method": "DELETE",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"year\": 2013,\n\t\"month\": \"Marzo\",\n\t\"description\": \"Lorem Description...\",\n\t\"propertyId\": \"58a8dea55f788311b0dd21c1\",\n\t\"_id\": \"58a90f1b5d531918c6a09dcc\",\n\t\"photo\": [\n\t\t\"/asdasd/asdasd.jpg\",\n\t\t\"asdasd/asdasd.jpg\"\n\t]\n}"
 			},
 			"parameters": [],
 			"headers": [
