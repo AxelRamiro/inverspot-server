@@ -9,7 +9,7 @@ module.exports = (mongoose,bcrypt) => {
     status:         { type: String, default: 'inactive'},
     // /Genaeral User Data
     state:          String,
-    asesorId:       {type:mongoose.Schema.Types.ObjectId, ref: 'user'},
+    asesorId:       {type:mongoose.Schema.Types.ObjectId, ref: 'User'},
     invesmentData:  {
       name:           String,
       firstName :     String,

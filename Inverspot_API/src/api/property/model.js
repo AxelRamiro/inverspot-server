@@ -12,6 +12,7 @@ module.exports = (mongoose) => {
       zipCode:              Number,
       coordinates:          String
     },
+    idBuilder:             {type:mongoose.Schema.Types.ObjectId, ref: 'Builder'},
     // /Basic Information
     dataSheet:             {
       investAmount:        Number,
