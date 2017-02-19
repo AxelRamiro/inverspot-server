@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2017-02-19T22:36:05.220Z",
+	"__export_date": "2017-02-19T23:45:47.563Z",
 	"__export_source": "insomnia.desktop.app:v4.2.14",
 	"resources": [
 		{
@@ -125,14 +125,14 @@
 		{
 			"_id": "req_123991f76e8f4bbab88ff0d45b87bfb4",
 			"parentId": "fld_612635bc5d6f4a0d86199bd6c28da4fb",
-			"modified": 1487543076878,
+			"modified": 1487545249055,
 			"created": 1487303038284,
 			"url": "{{baseURL}}/user",
 			"name": "Update User",
 			"method": "PUT",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"name\": \"Prueba UUID\",\n\t\"email\": \"uuid@gmail.com\",\n\t\"telephone\": 7721199947,\n\t\"password\": \"asdasdsd\",\n\t\"level\": \"admin\",\n\t\"_id\": \"58aa1a596cd42e06fb626943\",\n\t\"invesmentData\": {\n\t\t\"beneficiaries\": []\n\t},\n\t\"status\": \"active\"\n}"
+				"text": "{\n\t\"name\": \"Prueba UUID\",\n\t\"email\": \"uuid@gmail.com\",\n\t\"telephone\": 7721199947,\n\t\"password\": \"asdasdsd\",\n\t\"level\": \"admin\",\n\t\"_id\": \"58aa1a596cd42e06fb626943\",\n\t\"invesmentData\": {\n\t\t\"beneficiaries\": []\n\t},\n\t\"status\": \"inactive\"\n}"
 			},
 			"parameters": [
 				{
@@ -246,6 +246,28 @@
 			],
 			"authentication": {},
 			"metaSortKey": -1487324860652,
+			"_type": "request"
+		},
+		{
+			"_id": "req_24599f771c644125a3a9ce2c8a6dd17a",
+			"parentId": "fld_0041783589354834941f3aceab06ee38",
+			"modified": 1487547865958,
+			"created": 1487545148357,
+			"url": "{{baseURL}}/auth/verify/9df56f1d-11e4-4baa-a950-0b72a0f74dd3",
+			"name": "Verify User",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [
+				{
+					"name": "",
+					"value": ""
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1487324860651,
 			"_type": "request"
 		},
 		{

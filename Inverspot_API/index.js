@@ -28,7 +28,7 @@ const authenticate = jwtMiddleware({
    }
    return null;
  }
-}).unless({path: ['/api/auth']})
+}).unless({path: ['/api/auth',/^\/api\/auth\/.*/]})
 
 const errorAuthenticate = (err, req, res, next) => {
   if (err.name === 'UnauthorizedError') res.status(401).send('Invalid token...')
@@ -48,8 +48,8 @@ app.get ('/', (req,res) => {
 const sendMail = require('./src/mailing')(config)
 
 //Router
-require('./src/api')(router,mongoose,bcrypt,jwt,config,sendMail)
-app.use('/api', authenticate,errorAuthenticate, router)
+require('./src/api')(router, mongoose, bcrypt, jwt, config, sendMail)
+app.use('/api', authenticate, errorAuthenticate, router)
 //  /Router
 
 app.listen (app.get ('port'), (err) => {
