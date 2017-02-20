@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2017-02-20T02:38:24.156Z",
+	"__export_date": "2017-02-20T06:24:06.429Z",
 	"__export_source": "insomnia.desktop.app:v4.2.14",
 	"resources": [
 		{
@@ -98,14 +98,14 @@
 		{
 			"_id": "req_cb2cab4a65734a59b0412854036721c4",
 			"parentId": "fld_612635bc5d6f4a0d86199bd6c28da4fb",
-			"modified": 1487542229214,
+			"modified": 1487569948489,
 			"created": 1487300223912,
 			"url": "{{baseURL}}/user",
 			"name": "New User",
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"name\":\"Pruebota 22 UUID\",\n\t\"email\": \"uuid@gmail.com\",\n\t\"telephone\":7721199947,\n\t\"password\":\"123456\",\n\t\"level\": \"admin\"\n}"
+				"text": "{\n\t\"name\":\"Luis Villa\",\n\t\"email\": \"villak@hotmail.es\",\n\t\"telephone\":7721199947,\n\t\"password\":\"123456\",\n\t\"level\": \"user\"\n}"
 			},
 			"parameters": [],
 			"headers": [
@@ -158,20 +158,24 @@
 		{
 			"_id": "req_b087ec7d78834f139d861e8a6a555a37",
 			"parentId": "fld_612635bc5d6f4a0d86199bd6c28da4fb",
-			"modified": 1487306308764,
+			"modified": 1487571301340,
 			"created": 1487306291574,
 			"url": "{{baseURL}}/user",
 			"name": "Delete User",
 			"method": "DELETE",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"name\":\"LuisEnVilla\",\n\t\"_id\": \"58a666c43b87d51c71f35e22\",\n\t\"email\": \"villak@hotmail.es\",\n\t\"telephone\":7721199947,\n\t\"password\":\"123456\",\n\t\"level\": \"admin\"\n}"
+				"text": "{\n\t\"name\":\"LuisEnVilla\",\n\t\"_id\": \"58aa841ef58223138a33e0c8\",\n\t\"email\": \"villak@hotmail.es\",\n\t\"telephone\":7721199947,\n\t\"password\":\"123456\",\n\t\"level\": \"admin\"\n}"
 			},
 			"parameters": [],
 			"headers": [
 				{
 					"name": "Content-Type",
 					"value": "application/json"
+				},
+				{
+					"name": "Authorization",
+					"value": "{{token}}"
 				}
 			],
 			"authentication": {},
@@ -251,9 +255,9 @@
 		{
 			"_id": "req_24599f771c644125a3a9ce2c8a6dd17a",
 			"parentId": "fld_0041783589354834941f3aceab06ee38",
-			"modified": 1487557965699,
+			"modified": 1487570840250,
 			"created": 1487545148357,
-			"url": "{{baseURL}}/auth/verify/55d948e7-23a7-4f75-aa36-4a24a3cc1fa2",
+			"url": "{{baseURL}}/auth/verify/9726c9a7-b314-45eb-8c65-6f2defdf06d4",
 			"name": "Verify User",
 			"method": "GET",
 			"body": {
@@ -274,7 +278,7 @@
 		{
 			"_id": "req_0358154265c041ccb0829b6d202250d2",
 			"parentId": "fld_0041783589354834941f3aceab06ee38",
-			"modified": 1487549395205,
+			"modified": 1487570058804,
 			"created": 1487549260644,
 			"url": "{{baseURL}}/auth/recovery",
 			"name": "Recovery User",
@@ -285,7 +289,7 @@
 			"parameters": [
 				{
 					"name": "email",
-					"value": "uuid@gmail.com"
+					"value": "villak@hotmail.es"
 				}
 			],
 			"headers": [],
@@ -557,14 +561,14 @@
 		{
 			"_id": "req_166ade97af7f4a429bf0ec935ea6db7c",
 			"parentId": "fld_dcb04bd3414046e78ae56d08543a72ef",
-			"modified": 1487470636957,
+			"modified": 1487563929527,
 			"created": 1487470349083,
 			"url": "{{baseURL}}/investment",
 			"name": "Create Investment",
 			"method": "POST",
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"sharesNumber\": 20,\n\t\"status\": \"investment\",\n\t\"userId\": \"58a6f68199aa4e2c92bbc634\",\n\t\"propertyId\": \"58a8dea55f788311b0dd21c1\"\n}"
+				"text": "{\n\t\"sharesNumber\": 20,\n\t\"amount\": 45000,\n\t\"status\": \"investment\",\n\t\"userId\": \"58a944fd11320f222aec5277\",\n\t\"propertyId\": \"58a8dea55f788311b0dd21c1\"\n}"
 			},
 			"parameters": [],
 			"headers": [
