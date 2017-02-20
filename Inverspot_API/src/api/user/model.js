@@ -3,60 +3,60 @@ const uuid = require('uuid')
 module.exports = (mongoose,bcrypt) => {
   let userSchema = new mongoose.Schema({
     // Genaeral User Data
-    name:           String,
-    email:          { type: String, required: true, unique: true},
-    telephone:      Number,
-    password:       { type: String, required: true},
-    level:          { type: String, required: true},
-    status:         { type: String, default: 'inactive'},
-    checker:        String,
+    name:                 String,
+    email:                { type: String, required: true, unique: true},
+    telephone:            Number,
+    password:             { type: String, required: true},
+    level:                { type: String, required: true},
+    status:               { type: String, default: 'inactive'},
+    checker:              String,
     // /Genaeral User Data
-    state:          String,
-    asesorId:       {type:mongoose.Schema.Types.ObjectId, ref: 'User'},
-    invesmentData:  {
-      name:           String,
-      firstName :     String,
-      lastName :      String,
-      sex :           String,
-      nationality:    String,
-      birthPlace:     String,
-      idNumber:       Number,
-      typeid:         String,
-      curp:           String,
-      rfc:            String,
-      address: {
-        street:       String,
-        suburb:       String,
-        town:         String,
-        city:         String,
-        contry:       String,
-        zipCode:      String,
+    state:                String,
+    asesorId:             {type:mongoose.Schema.Types.ObjectId, ref: 'User'},
+    invesmentData:        {
+      name:                 String,
+      firstName :           String,
+      lastName :            String,
+      sex :                 String,
+      nationality:          String,
+      birthPlace:           String,
+      idNumber:             Number,
+      typeid:               String,
+      curp:                 String,
+      rfc:                  String,
+      address:            {
+        street:             String,
+        suburb:             String,
+        town:               String,
+        city:               String,
+        contry:             String,
+        zipCode:            String,
       },
-      maritalStatus:  String,
-      regime:         String,
-      spouse:        String,
-      email:         String,
-      telephone:      String,
-      celphone:      String,
-      investmentForm: {
-        methodPayment: String,
-        anticipationForm:String,
+      maritalStatus:      String,
+      regime:             String,
+      spouse:             String,
+      email:              String,
+      telephone:          String,
+      celphone:           String,
+      investmentForm:     {
+        methodPayment:      String,
+        anticipationForm:   String,
       },
-      bankData: {
-        acoountNumber: Number,
-        standardizedBankKey: Number,
-        bank: String,
-        acountHolder: String,
+      bankData:           {
+        acoountNumber:        Number,
+        standardizedBankKey:  Number,
+        bank:                 String,
+        acountHolder:         String,
       },
-      beneficiaries:[{
-        name: String,
-        firstName: String,
-        lastName: String,
-        telephone: Number,
-        celphone: Number,
-        percentage: Number
+      beneficiaries:[     {
+        name:               String,
+        firstName:          String,
+        lastName:           String,
+        telephone:          Number,
+        celphone:           Number,
+        percentage:         Number
       }],
-      comments: String
+      comments:           String
     }
   },{timestamps: true})
 
