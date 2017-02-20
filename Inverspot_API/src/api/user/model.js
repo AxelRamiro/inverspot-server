@@ -4,7 +4,7 @@ module.exports = (mongoose,bcrypt) => {
   let userSchema = new mongoose.Schema({
     // Genaeral User Data
     name:           String,
-    email:          { type: String, required: true},
+    email:          { type: String, required: true, unique: true},
     telephone:      Number,
     password:       { type: String, required: true},
     level:          { type: String, required: true},
