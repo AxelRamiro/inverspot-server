@@ -1,4 +1,4 @@
-module.exports = (router, User, jwt, config) => {
+module.exports = (router, User, jwt, config, sendMail) => {
 
   router.get('/auth/verify/:checker', (req, res) => {
 
@@ -12,7 +12,7 @@ module.exports = (router, User, jwt, config) => {
       let token = jwt.sign(user, config.auth.secret, {
         expiresIn: "15 days"
       })
-
+      if (!req.query.password) sendMail({to: user.email, subject: `${user.name} tu registro esta completo`}, 'welcome', {name: user.name}, console.log)
       return res.status(200).jsonp({
         user:user,
         token:`Bearer ${token}`

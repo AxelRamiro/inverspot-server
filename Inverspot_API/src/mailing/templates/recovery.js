@@ -1,6 +1,6 @@
 module.exports = (params) => {
-  return `
-  <style>
+  return `<style>
+
   @font-face {
       font-family: "AvenirNext-Regular";
       font-style: normal;
@@ -128,7 +128,7 @@ module.exports = (params) => {
                           <div style="line-height: 44px;">
                               <font face="Arial, Helvetica, sans-serif" size="5" color="#57697e" style="font-size: 34px;">
                               <span style="font-family: AvenirNext-Bold; font-size: 30px; color: #4B118E;">
-                                  ¡Te damos la bienvenida a Inverspot!
+                                  ¡Hola <span style="color: #FF3C00;">${params.name}</span>, recupera tu contraseña!
                               </span></font>
                           </div>
                           <!-- padding --><div style="height: 40px; line-height: 40px; font-size: 10px;"> </div>
@@ -139,9 +139,9 @@ module.exports = (params) => {
                       <tr>
                           <td align="center">
                               <div style="line-height: 24px;">
-                                              <font face="AvenirNext-Regular" size="4" color="#000" style="font-size: 16px;">
-                                              <span style="font-family: AvenirNext-Regular; font-size: 16px; color: black;">
-                                                  <b>Sabemos de inversiones inmobiliarias. Para comenzar a participar deberás<br>confirmar tu cuenta dando click en el botón de abajo.</b>
+                                              <font face="AvenirNext-Regular" size="4" color="#000" style="font-size: 22px;">
+                                              <span style="font-family: AvenirNext-Regular; font-size: 22px; color: black;">
+                                                  <b>Para recuperar tu contraseña deberás<br>dar click en el botón de abajo.</b>
                                               </span></font>
                               </div>
                           </td>
@@ -151,7 +151,9 @@ module.exports = (params) => {
                               <div style="line-height: 24px;">
                                               <font face="AvenirNext-Bold" size="3" color="#000" style="font-size: 22px;">
                                               <strong style="font-family: AvenirNext-Bold; font-size: 22px; color: black;">
-                                                 <a href="${params.verifyUrl}" class="button large-invertion" style="width: 60%;">Comienza a invertir</a>
+                                                <a href="${params.domain}/varify/${params.verifyUrl}" >
+                                                   <button class="button large-invertion" style="width: 80%;">RECUPERAR CONTRASEÑA</button>
+                                                </a>
                                               </strong></font>
                               </div>
                           </td>
@@ -225,5 +227,6 @@ module.exports = (params) => {
           </td></tr>
       </table>
 
-  </div> `
+  </div>
+`
 }
