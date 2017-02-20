@@ -12,7 +12,7 @@ module.exports = (mongoose) => {
       zipCode:              Number,
       coordinates:          String
     },
-    idBuilder:             {type:mongoose.Schema.Types.ObjectId, ref: 'Builder'},
+    builder:             {type:mongoose.Schema.Types.ObjectId, ref: 'Builder'},
     status:                { type: String, default: 'open'},
     // /Basic Information
     dataSheet:             {
@@ -31,7 +31,7 @@ module.exports = (mongoose) => {
       annualYield:          Number
     },
     fixedData:              {
-      objectiveFundraising:   String,
+      objectiveFundraising:   Number,
       expectedAnnualYield:    Number,
       expectedUtility:        Number
     },

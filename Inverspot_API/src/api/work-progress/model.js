@@ -5,7 +5,7 @@ module.exports = (mongoose) => {
     month: String,
     description: String,
     photo: [String],
-    propertyId:     {type:mongoose.Schema.Types.ObjectId, ref: 'Property'}
+    property:     {type:mongoose.Schema.Types.ObjectId, ref: 'Property'}
   },{timestamps:true})
 
   return mongoose.model('WorkProgress', workProgressSchema)

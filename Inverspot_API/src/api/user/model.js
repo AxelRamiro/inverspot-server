@@ -12,7 +12,7 @@ module.exports = (mongoose,bcrypt) => {
     checker:              String,
     // /Genaeral User Data
     state:                String,
-    asesorId:             {type:mongoose.Schema.Types.ObjectId, ref: 'User'},
+    asesor:             {type:mongoose.Schema.Types.ObjectId, ref: 'User'},
     invesmentData:        {
       name:                 String,
       firstName :           String,
