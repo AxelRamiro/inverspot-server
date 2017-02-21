@@ -47,11 +47,18 @@ module.exports = (mongoose) => {
     supplementaryData:        []
   },{timestamps:                true})
 
-  function updateStatus(resProperty) {
+  function updateStatus (resProperty) {
     let sharesSold = resProperty.dataSheet.sharesSold
     let totalShares = resProperty.dataSheet.totalShares
-    resProperty.status = (sharesSold >= totalShares) ? 'fund': 'available'
-    resProperty.save()
+    let status = resProperty.status
+
+    if (sharesSold >= totalShares && status != 'fund') {
+      resProperty.status = 'fund'
+      resProperty.save()
+    } else if (sharesSold < totalShares && status != 'available') {
+      resProperty.status = 'available'
+      resProperty.save()
+    }
   }
 
   propertySchema.post('save', updateStatus)

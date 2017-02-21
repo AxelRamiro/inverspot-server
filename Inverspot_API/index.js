@@ -13,6 +13,7 @@ const router = express.Router()
 const app = express()
 mongoose.Promise = Promise
 mongoose.connect(config.db.dbUri)
+mongoose.set('debug', config.db.debug);
 
 app.set('port', process.env.PORT || config.server.port)
 app.use(bodyParser.urlencoded({extended: false}))
