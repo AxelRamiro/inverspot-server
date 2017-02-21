@@ -11,6 +11,7 @@ const jwtMiddleware = require('express-jwt')
 // /dependencies
 const router = express.Router()
 const app = express()
+mongoose.Promise = Promise
 mongoose.connect(config.db.dbUri)
 
 app.set('port', process.env.PORT || config.server.port)
@@ -28,7 +29,16 @@ const authenticate = jwtMiddleware({
    }
    return null;
  }
-}).unless({path: ['/api/auth',/^\/api\/auth\/.*/]})
+}).unless({
+  path: ['/api/auth',
+  /^\/api\/auth\/.*/,
+  {
+    url: '/api/property',
+    methods: ['GET']
+  },{
+    url: '/api/user',
+    methods: ['GET']
+  }]})
 
 const errorAuthenticate = (err, req, res, next) => {
   if (err.name === 'UnauthorizedError') res.status(401).send('Invalid token...')
