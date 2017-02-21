@@ -13,7 +13,7 @@ module.exports = (mongoose) => {
       coordinates:          String
     },
     builder:             {type:mongoose.Schema.Types.ObjectId, ref: 'Builder'},
-    status:                { type: String, default: 'open'},
+    status:                { type: String, default: 'available'},
     // /Basic Information
     dataSheet:             {
       investAmount:        Number,
@@ -47,19 +47,18 @@ module.exports = (mongoose) => {
     supplementaryData:        []
   },{timestamps:                true})
 
-  propertySchema.post('save', function(resProperty) {
+  function updateStatus(resProperty) {
     if (resProperty.dataSheet.sharesSold >= resProperty.dataSheet.totalShares) {
-      resProperty.status = 'fondeado'
-      resProperty.save()
+      resProperty.status = 'fund'
+    } else {
+      resProperty.status = 'available'
     }
-  })
+    resProperty.save()
+  }
 
-  propertySchema.post('findOneAndUpdate', function(resProperty) {
-    if (resProperty.dataSheet.sharesSold >= resProperty.dataSheet.totalShares) {
-      resProperty.status = 'fondeado'
-      resProperty.save()
-    }
-  })
+  propertySchema.post('save', updateStatus)
+
+  propertySchema.post('findOneAndUpdate', updateStatus)
 
   return mongoose.model('Property', propertySchema)
 }

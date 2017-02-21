@@ -11,6 +11,7 @@ module.exports = (mongoose,bcrypt) => {
     status:               { type: String, default: 'inactive'},
     checker:              String,
     // /Genaeral User Data
+    contactFrom:          String,
     state:                String,
     asesor:             {type:mongoose.Schema.Types.ObjectId, ref: 'User'},
     invesmentData:        {

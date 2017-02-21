@@ -1,5 +1,5 @@
 module.exports = (router, User, sendMail) => {
-  router.post('/auth/singup', (req, res) => {
+  router.post('/auth/signup', (req, res) => {
 
     let user = new User (req.body)
     user.save ((err, resUser) => {
