@@ -1,4 +1,4 @@
-module.exports = (params) => {
+module.exports = (params, config) => {
   return `
   <style>
   @font-face {
@@ -151,7 +151,7 @@ module.exports = (params) => {
                               <div style="line-height: 24px;">
                                               <font face="AvenirNext-Bold" size="3" color="#000" style="font-size: 22px;">
                                               <strong style="font-family: AvenirNext-Bold; font-size: 22px; color: black;">
-                                                 <a href="${params.domain}" class="button large-invertion" style="width: 60%;">Comienza a invertir</a>
+                                                 <a href="${config.mailing.domain}" class="button large-invertion" style="width: 60%;">Comienza a invertir</a>
                                               </strong></font>
                               </div>
                           </td>

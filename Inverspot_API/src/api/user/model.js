@@ -37,7 +37,7 @@ module.exports = (mongoose,bcrypt) => {
       spouse:             String,
       email:              String,
       telephone:          String,
-      celphone:           String,
+      cellphone:           String,
       investmentForm:     {
         methodPayment:      String,
         anticipationForm:   String,
@@ -53,7 +53,7 @@ module.exports = (mongoose,bcrypt) => {
         firstName:          String,
         lastName:           String,
         telephone:          Number,
-        celphone:           Number,
+        cellphone:           Number,
         percentage:         Number
       }],
       comments:           String
