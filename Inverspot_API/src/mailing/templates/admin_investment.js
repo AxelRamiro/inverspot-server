@@ -1,5 +1,6 @@
-module.exports = (params, config) => {
-  return `<style>
+module.exports = (params, config, currency) => {
+  return `
+  <style>
 
   @font-face {
       font-family: "AvenirNext-Regular";
@@ -127,7 +128,7 @@ module.exports = (params, config) => {
 
                                               <font face="AvenirNext-Regular" size="4" color="#000" style="font-size: 22px;">
                                               <span style="font-family: AvenirNext-Regular; font-size: 22px; color: black;">
-                                                  <b>${params.name}</b>
+                                                  <b>${params.nameInvestor}</b>
                                               </span></font>
                               </div>
                           </td>
@@ -155,7 +156,7 @@ module.exports = (params, config) => {
 
                                               <font face="AvenirNext-Regular" size="4" color="#000" style="font-size: 22px;">
                                               <span style="font-family: AvenirNext-Regular; font-size: 22px; color: black;">
-                                                  <b>${params.email}</b>
+                                                  <b>${params.emailInvestor}</b>
                                               </span></font>
                               </div>
                           </td>
@@ -183,7 +184,7 @@ module.exports = (params, config) => {
 
                                               <font face="AvenirNext-Regular" size="4" color="#000" style="font-size: 22px;">
                                               <span style="font-family: AvenirNext-Regular; font-size: 22px; color: black;">
-                                                  <b>${params.telephone}</b>
+                                                  <b>${params.telephoneInvestor}</b>
                                               </span></font>
                               </div>
                               <div style="height: 40px;"> </div>
@@ -197,7 +198,7 @@ module.exports = (params, config) => {
 
                                               <font face="AvenirNext-Regular" size="4" color="#000" style="font-size: 22px;">
                                               <span style="font-family: AvenirNext-Regular; font-size: 22px; color: black;">
-                                                  <b>$ ${params.amount}.00</b>
+                                                  <b>${currency(params.amount)}</b>
                                               </span></font>
                               </div>
                               <div style="height: 40px;"> </div>

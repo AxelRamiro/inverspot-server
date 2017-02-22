@@ -1,4 +1,4 @@
-module.exports = (params, config) => {
+module.exports = (params, config, currency) => {
   return `
   <style>
 
@@ -52,38 +52,38 @@ module.exports = (params, config) => {
   html { -webkit-text-size-adjust:none; -ms-text-size-adjust: none;}
   @media only screen and (max-device-width: 680px), only screen and (max-width: 680px) {
       *[class="table_width_100"] {
-  		width: 96% !important;
-  	}
-  	*[class="border-right_mob"] {
-  		border-right: 1px solid #dddddd;
-  	}
-  	*[class="mob_100"] {
-  		width: 100% !important;
-  	}
-  	*[class="mob_center"] {
-  		text-align: center !important;
-  	}
-  	*[class="mob_center_bl"] {
-  		float: none !important;
-  		display: block !important;
-  		margin: 0px auto;
-  	}
-  	.iage_footer a {
-  		text-decoration: none;
-  		color: #929ca8;
-  	}
-  	img.mob_display_none {
-  		width: 0px !important;
-  		height: 0px !important;
-  		display: none !important;
-  	}
-  	img.mob_width_50 {
-  		width: 40% !important;
-  		height: auto !important;
-  	}
+      width: 96% !important;
+    }
+    *[class="border-right_mob"] {
+      border-right: 1px solid #dddddd;
+    }
+    *[class="mob_100"] {
+      width: 100% !important;
+    }
+    *[class="mob_center"] {
+      text-align: center !important;
+    }
+    *[class="mob_center_bl"] {
+      float: none !important;
+      display: block !important;
+      margin: 0px auto;
+    }
+    .iage_footer a {
+      text-decoration: none;
+      color: #929ca8;
+    }
+    img.mob_display_none {
+      width: 0px !important;
+      height: 0px !important;
+      display: none !important;
+    }
+    img.mob_width_50 {
+      width: 40% !important;
+      height: auto !important;
+    }
   }
   .table_width_100 {
-  	width: 680px;
+    width: 680px;
   }
   </style>
 
@@ -166,7 +166,7 @@ module.exports = (params, config) => {
 
                                               <font face="AvenirNext-Regular" size="4" color="#000" style="font-size: 16px;">
                                               <span style="font-family: AvenirNext-Regular; font-size: 18px; color: #4B118E;">
-                                                  Monto a invertir: <b>$ ${params.investAmount}.00</b><br>
+                                                  Monto a invertir: <b>${currency(params.amount)}</b><br>
                                                   Plazo estimado: <b>${params.estimatedTerm} meses</b><br>
                                                   Rendimiento estimado: <b>${params.yieldInTime}%</b><br>
                                               </span></font>
@@ -246,7 +246,7 @@ module.exports = (params, config) => {
                           <div style="width: 20%; line-height: 24px;">
                               <font face="AvenirNext-Bold" size="3" color="#000" style="font-size: 16px;">
                               <strong style="font-family: AvenirNext-Bold; font-size: 16px; color: #4B118E;">
-                                  <a style="color: #4B118E;">$ ${params.investAmount}.00</a>
+                                  <a style="color: #4B118E;">${currency(params.investAmount)}</a>
                               </strong></font>
                           </div>
                           </td>
@@ -254,7 +254,7 @@ module.exports = (params, config) => {
                           <div style="width: 20%; line-height: 24px;">
                               <font face="AvenirNext-Bold" size="3" color="#000" style="font-size: 16px;">
                               <strong style="font-family: AvenirNext-Bold; font-size: 16px; color: #4B118E;">
-                                  <a style="color: #4B118E;">$ ${params.amount}.00</a>
+                                  <a style="color: #4B118E;">${currency(params.amount)}</a>
                               </strong></font>
                           </div>
                           </td>
@@ -290,7 +290,7 @@ module.exports = (params, config) => {
                           <div style="">
                               <font face="AvenirNext-Bold" size="3" color="#000" style="font-size: 16px;">
                               <strong style="font-family: AvenirNext-Bold; font-size: 16px; color: #4B118E;">
-                                  <a style="color: #4B118E;">$ ${params.amount}.00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                  <a style="color: #4B118E;">${currency(params.amount)}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                               </strong></font>
                           </div>
                           </td>
