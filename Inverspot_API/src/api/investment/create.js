@@ -40,7 +40,7 @@ module.exports = (router, Investment, Property, User, sendMail) => {
           sendMail({to: emailParams.emailInvestor, subject: `Confirmación de nueva inversión en ${emailParams.title}`}, 'investment', emailParams, console.log)
           sendMail({to: emailParams.emailAsesor, subject: `Nueva inversión en ${emailParams.title}`}, 'admin_investment', emailParams, console.log)
 
-          return res.status(201).send()
+          return res.status(201).send(resInvestment)
         })
       })
     })
