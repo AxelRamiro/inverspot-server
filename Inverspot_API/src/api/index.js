@@ -13,6 +13,6 @@ module.exports = (router, mongoose, bcrypt, jwt, config, sendMail, upload) => {
   require('./property')(router, Property, upload)
   require('./builder')(router, Builder)
   require('./investment')(router, Investment, Property, User, sendMail)
-  require('./work-progress')(router, WorkProgress)
+  require('./work-progress')(router, WorkProgress, upload)
   // /Routers
 }

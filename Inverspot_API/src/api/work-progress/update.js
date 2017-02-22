@@ -1,11 +1,13 @@
-module.exports = (router, WorkProgress) => {
-  router.put('/work-progress', (req, res) => {
+module.exports = (router, WorkProgress, upload) => {
+  router.put('/work-progress', upload.single('photo'), (req, res) => {
+    let workProgress = req.body
+    if (req.file) workProgress.image = req.file.filename
 
-    WorkProgress.findByIdAndUpdate(req.body._id, req.body, {new: true},(err, workProgress) => {
+    WorkProgress.findByIdAndUpdate(workProgress._id, workProgress, {new: true},(err, resWorkProgress) => {
 
       if (err)
         return res.status(500).send(err.message)
-      res.status(200).jsonp(workProgress)
+      res.status(200).jsonp(resWorkProgress)
     })
   })
 }

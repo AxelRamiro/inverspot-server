@@ -1,5 +1,5 @@
 module.exports = (router, Property, upload) => {
-  router.post('/property',upload.single('image'), (req, res) => {
+  router.post('/property', upload.single('image'), (req, res) => {
     let property = new Property (req.body)
     if (req.file) property.image = req.file.filename
     property.save ((err, resProperty) => {
