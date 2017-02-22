@@ -8,18 +8,22 @@ const jwt = require('jsonwebtoken')
 const morgan = require('morgan')
 const bcrypt = require('bcryptjs')
 const jwtMiddleware = require('express-jwt')
+const multer = require('multer');
+const path = require('path');
+const uuid = require('uuid')
 // /dependencies
 const router = express.Router()
 const app = express()
+// Database config
 mongoose.Promise = Promise
 mongoose.connect(config.db.dbUri)
 mongoose.set('debug', config.db.debug);
-
+//  /Database config
 app.set('port', process.env.PORT || config.server.port)
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json({limit: '2mb'}))
 app.use(morgan('dev'))
-
+// Authenticate config
 const authenticate = jwtMiddleware({
   secret: config.auth.secret,
   getToken: (req) => {
@@ -32,18 +36,31 @@ const authenticate = jwtMiddleware({
  }
 }).unless({
   path: ['/api/auth',
-  /^\/api\/auth\/.*/,
+  /^\/api\/auth\/.*/, // -----> Quit authenticate path /api/auth/...
   {
     url: '/api/property',
-    methods: ['GET']
+    methods: ['GET']  // -----> unique method
   },{
     url: '/api/user',
     methods: ['GET']
   }]})
-
+// Middleware error authenticate
 const errorAuthenticate = (err, req, res, next) => {
   if (err.name === 'UnauthorizedError') res.status(401).send('Invalid token...')
 }
+// / Authenticate config
+
+// Update File Configurate
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb (null, config.server.uploadPath)
+  },
+  filename: (req, file, cb) => {
+    cb (null,  `${uuid.v4()}${path.extname(file.originalname)}`)
+  }
+})
+const upload = multer({ storage: storage })
+// /Update File Configurate
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
@@ -55,11 +72,11 @@ app.use((req, res, next) => {
 app.get ('/', (req,res) => {
   res.send ('Hello Word!!')
 })
-
+// Init module Mailing
 const sendMail = require('./src/mailing')(config)
 
 //Router
-require('./src/api')(router, mongoose, bcrypt, jwt, config, sendMail)
+require('./src/api')(router, mongoose, bcrypt, jwt, config, sendMail, upload)
 app.use('/api', authenticate, errorAuthenticate, router)
 //  /Router
 
