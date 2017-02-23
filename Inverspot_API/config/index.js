@@ -8,5 +8,6 @@ module.exports = {
   server: require('./server.json'),
   db: db,
   auth: require('./auth.json'),
-  mailing: require('./mailing')
+  mailing: require('./mailing'),
+  facebook: require('./facebook')
 }

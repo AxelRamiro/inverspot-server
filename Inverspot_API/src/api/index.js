@@ -1,4 +1,4 @@
-module.exports = (router, mongoose, bcrypt, jwt, config, sendMail, upload) => {
+module.exports = (router, mongoose, bcrypt, jwt, config, sendMail, upload, passport) => {
   // Models
   const User = require('./user/model')(mongoose, bcrypt)
   const Property = require('./property/model')(mongoose)
@@ -8,7 +8,7 @@ module.exports = (router, mongoose, bcrypt, jwt, config, sendMail, upload) => {
   // /Models
 
   // Routers
-  require('./auth')(router, User, jwt, config, sendMail)
+  require('./auth')(router, User, jwt, config, sendMail, passport)
   require('./user')(router, User, sendMail)
   require('./property')(router, Property, upload)
   require('./builder')(router, Builder)

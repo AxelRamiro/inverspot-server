@@ -11,6 +11,7 @@ const jwtMiddleware = require('express-jwt')
 const multer = require('multer');
 const path = require('path');
 const uuid = require('uuid')
+const passport = require('passport')
 // /dependencies
 const router = express.Router()
 const app = express()
@@ -23,6 +24,7 @@ app.set('port', process.env.PORT || config.server.port)
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json({limit: '2mb'}))
 app.use(morgan('dev'))
+app.use(passport.initialize())
 // Authenticate config
 const authenticate = jwtMiddleware({
   secret: config.auth.secret,
@@ -76,7 +78,7 @@ app.get ('/', (req,res) => {
 const sendMail = require('./src/mailing')(config)
 
 //Router
-require('./src/api')(router, mongoose, bcrypt, jwt, config, sendMail, upload)
+require('./src/api')(router, mongoose, bcrypt, jwt, config, sendMail, upload, passport)
 app.use('/api', authenticate, errorAuthenticate, router)
 //  /Router
 

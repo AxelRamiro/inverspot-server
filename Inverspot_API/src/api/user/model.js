@@ -6,10 +6,11 @@ module.exports = (mongoose,bcrypt) => {
     name:                 String,
     email:                { type: String, required: true, unique: true},
     telephone:            Number,
-    password:             { type: String, required: true},
-    level:                { type: String, required: true},
+    password:             { type: String, required: false},
+    level:                { type: String, required: false, default: 'user'},
     status:               { type: String, default: 'inactive'},
     checker:              String,
+    facebook:             { type: String, unique: true},
     // /Genaeral User Data
     contactFrom:          String,
     state:                String,
@@ -63,7 +64,7 @@ module.exports = (mongoose,bcrypt) => {
 
   userSchema.pre('save', function(next) {
 
-    if (this.isModified('password') || this.isNew ) this.password = bcrypt.hashSync(this.password.trim(), 10)
+    if (this.isNew && this.password ) this.password = bcrypt.hashSync(this.password.trim(), 10)
     if (this.isModified('status') || this.isNew ) this.checker = (this.status == 'inactive') ? uuid.v4() : null
 
     return next()
