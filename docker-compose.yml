@@ -4,7 +4,7 @@ services:
     image: jwilder/nginx-proxy
     container_name: nginx-proxy
     ports:
-      - "80:80"
+      - "8080:8080"
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
     links:
@@ -17,7 +17,11 @@ services:
     depends_on:
       - mongo
     ports:
+<<<<<<< HEAD
+      - "3000:8080"
+=======
       - "8080:8080"
+>>>>>>> ff6a86bbff0fa4c9e4f6b00f4da0dc0aa8bc6abf
     environment:
       - VIRTUAL_HOST=local.host
     volumes:
