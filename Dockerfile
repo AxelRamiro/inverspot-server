@@ -47,7 +47,7 @@ WORKDIR /usr/src/app
 COPY Inverspot_API/ .
 RUN npm install
 
-VOLUME ["/usr/src/app"]
+VOLUME ["/usr/src/app/upload"]
 
 EXPOSE 8080
 CMD ["node", "index.js"]

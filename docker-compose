@@ -1,0 +1,31 @@
+version: '2'
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    links:
+      - api
+      - mongo
+
+  api:
+    image: is-api
+    container_name: is-api
+    depends_on:
+      - mongo
+    ports:
+      - "80:80"
+    environment:
+      - VIRTUAL_HOST=local.host
+    volumes:
+      - /home/jorge/public/upload:/usr/src/app/upload
+
+
+  mongo:
+    image: mongodb
+    container_name: is-db
+    ports:
+      - "27017:27017"
