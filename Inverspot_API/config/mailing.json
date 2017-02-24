@@ -9,8 +9,9 @@
     }
   },
   "from" : "\"Inverspot\" <hola@inverspot.mx>",
-  "domain": "http://localhost:8080/",
-  "imagesUrl": "http://localhost:8080/public/",
-  "adminUserUrl": "http://localhost:8080/user/",
-  "recoveryURL": "http://localhost:8080/recovery/"
+  "domain": "http://192.169.174.96/",
+  "imagesUrl": "http://192.169.174.96/static/",
+  "adminUserUrl": "http://192.169.174.96/",
+  "recoveryURL": "http://192.169.174.96/recovery/",
+  "logoImg": "http://192.169.174.96/static/9ff1961d-0e06-4dba-928b-58e1c1771bfd.png"
 }

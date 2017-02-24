@@ -71,8 +71,9 @@ app.use((req, res, next) => {
   next()
 })
 
+
 app.get ('/', (req,res) => {
-  res.send ('Hello Word!!')
+  res.sendfile (path.join(__dirname +'/testFacebook.html'))
 })
 // Init module Mailing
 const sendMail = require('./src/mailing')(config)

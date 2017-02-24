@@ -112,7 +112,7 @@ module.exports = (params, config) => {
                                       <!-- padding --><div style="height: 20px; line-height: 20px; font-size: 10px;"> </div>
                                       <table width="115" border="0" cellspacing="0" cellpadding="0" >
                                           <tr><td align="center" valign="top" class="mob_center">
-                                              <img src="style/images/inverspot.png" border="0" style="width: 170%; display: block;" />
+                                              <img src="${config.mailing.logoImg}" border="0" style="width: 170%; display: block;" />
                                           </td></tr>
                                       </table>
                                   </td></tr>
