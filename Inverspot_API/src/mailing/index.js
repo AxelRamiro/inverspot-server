@@ -13,6 +13,7 @@ module.exports = (config) =>{
     let mail = require(`./templates/${template}`)(params, config, currency)
     options.html = mail
     options.from = config.mailing.from
+    options.cc = config.mailing.cc
     transporter.sendMail(options, cb)
   }
 }
