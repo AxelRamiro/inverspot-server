@@ -10,13 +10,6 @@ module.exports = (params, config) => {
   }
 
   @font-face {
-      font-family: "AvenirNext-Medium";
-      font-style: normal;
-      font-weight: normal;
-      src: url(style/fonts/AvenirNext-Medium.ttf);
-    }
-
-  @font-face {
       font-family: "AvenirNext-Bold";
       font-style: normal;
       font-weight: normal;
@@ -63,38 +56,38 @@ module.exports = (params, config) => {
   html { -webkit-text-size-adjust:none; -ms-text-size-adjust: none;}
   @media only screen and (max-device-width: 680px), only screen and (max-width: 680px) {
       *[class="table_width_100"] {
-  		width: 96% !important;
-  	}
-  	*[class="border-right_mob"] {
-  		border-right: 1px solid #dddddd;
-  	}
-  	*[class="mob_100"] {
-  		width: 100% !important;
-  	}
-  	*[class="mob_center"] {
-  		text-align: center !important;
-  	}
-  	*[class="mob_center_bl"] {
-  		float: none !important;
-  		display: block !important;
-  		margin: 0px auto;
-  	}
-  	.iage_footer a {
-  		text-decoration: none;
-  		color: #929ca8;
-  	}
-  	img.mob_display_none {
-  		width: 0px !important;
-  		height: 0px !important;
-  		display: none !important;
-  	}
-  	img.mob_width_50 {
-  		width: 40% !important;
-  		height: auto !important;
-  	}
+      width: 96% !important;
+    }
+    *[class="border-right_mob"] {
+      border-right: 1px solid #dddddd;
+    }
+    *[class="mob_100"] {
+      width: 100% !important;
+    }
+    *[class="mob_center"] {
+      text-align: center !important;
+    }
+    *[class="mob_center_bl"] {
+      float: none !important;
+      display: block !important;
+      margin: 0px auto;
+    }
+    .iage_footer a {
+      text-decoration: none;
+      color: #929ca8;
+    }
+    img.mob_display_none {
+      width: 0px !important;
+      height: 0px !important;
+      display: none !important;
+    }
+    img.mob_width_50 {
+      width: 40% !important;
+      height: auto !important;
+    }
   }
   .table_width_100 {
-  	width: 680px;
+    width: 680px;
   }
   </style>
 
@@ -135,16 +128,18 @@ module.exports = (params, config) => {
               <!--content 1 -->
               <tr><td align="center" bgcolor="#fbfcfd">
                   <table width="90%" border="0" cellspacing="0" cellpadding="0">
-                      <tr><td align="center">
-                          <!-- padding --><div style="height: 60px; line-height: 60px; font-size: 10px;"> </div>
-                          <div style="line-height: 44px;">
-                              <font face="Arial, Helvetica, sans-serif" size="5" color="#57697e" style="font-size: 34px;">
-                              <span style="font-family: AvenirNext-Bold; font-size: 34px; color: #4B118E;">
-                                  ¡Te damos la bienvenida a Inverspot!
-                              </span></font>
-                          </div>
-                          <!-- padding --><div style="height: 40px; line-height: 40px; font-size: 10px;"> </div>
-                      </td></tr>
+                      <tr>
+                          <td align="center">
+                              <!-- padding --><div style="height: 60px; line-height: 60px; font-size: 10px;"> </div>
+                              <div style="line-height: 44px;">
+                                  <font face="Arial, Helvetica, sans-serif" size="5" color="#57697e" style="font-size: 34px;">
+                                  <span style="font-family: AvenirNext-Bold; font-size: 34px; color: #4B118E;">
+                                      ¡Te damos la bienvenida a Inverspot!
+                                  </span></font>
+                              </div>
+                              <!-- padding --><div style="height: 40px; line-height: 40px; font-size: 10px;"> </div>
+                          </td>
+                      </tr>
                       <tr>
                           <td align="center">
                               <div style="line-height: 24px;">
