@@ -2,6 +2,7 @@ module.exports = (router, Property, upload) => {
   router.put('/property', upload.single('image'), (req, res) => {
     let property = req.body
     if (req.file) property.image = req.file.filename
+    property.status = (property.dataSheet.totalShares > property.dataSheet.sharesSold) ? 'available' : 'fund'
     Property.findByIdAndUpdate(property._id, property, {new: true},(err, resProperty) => {
 
       if (err)

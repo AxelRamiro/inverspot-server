@@ -10,10 +10,11 @@ module.exports = (router, Investment, Property, User, sendMail) => {
       Property.findByIdAndUpdate(resInvestment.property, {
         $inc:{
           'dataSheet.sharesSold': resInvestment.sharesNumber
-        }}, (err, resProperty)=>{
+        }}, {new: true}, (err, resProperty)=>{
 
         if(err) return res.status(500).send(err.message)
-
+        resProperty.status = (resProperty.dataSheet.totalShares > resProperty.dataSheet.sharesSold) ? 'available' : 'fund'
+        resProperty.save()
         resInvestment.populate({
           path: 'investor',
           populate: {

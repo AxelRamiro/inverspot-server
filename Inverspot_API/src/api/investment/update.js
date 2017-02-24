@@ -12,8 +12,10 @@ module.exports = (router, Investment, Property) => {
 
         Property.findByIdAndUpdate(investment.property, {$inc:{'dataSheet.sharesSold': dif }}, {new: true}, (err, resProperty) =>{
           if (err)return res.status(500).send(err.message)
+          resProperty.status = (resProperty.dataSheet.totalShares > resProperty.dataSheet.sharesSold) ? 'available' : 'fund'
+          resProperty.save()
           if (!oldInvestment) return res.status(404).send('NOT_FOUND')
-          
+
           res.status(200).jsonp(investment)
         })
       })
