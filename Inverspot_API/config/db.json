@@ -9,7 +9,7 @@
   "dbLocal":{
     "port"      : 27017,
     "database"  : "inverspot",
-    "address"   : "is-db"
+    "address"   : "127.0.0.1"
   },
   "debug":  true
 }
