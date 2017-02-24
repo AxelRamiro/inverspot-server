@@ -50,14 +50,22 @@ module.exports = (mongoose,bcrypt) => {
         bank:                 String,
         acountHolder:         String,
       },
-      beneficiaries:[     {
+      beneficiary1:{
         name:               String,
         firstName:          String,
         lastName:           String,
         telephone:          Number,
         cellphone:           Number,
         percentage:         Number
-      }],
+      },
+      beneficiary2:{
+        name:               String,
+        firstName:          String,
+        lastName:           String,
+        telephone:          Number,
+        cellphone:           Number,
+        percentage:         Number
+      },
       comments:           String
     }
   },{timestamps: true})
