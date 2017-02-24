@@ -31,7 +31,7 @@ module.exports = (mongoose,bcrypt) => {
         suburb:             String,
         town:               String,
         city:               String,
-        contry:             String,
+        country:             String,
         zipCode:            String,
       },
       maritalStatus:      String,
