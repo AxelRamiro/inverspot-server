@@ -11,9 +11,7 @@ module.exports = (router, User, jwt, config) => {
         if (err) return res.status(500).send(err.message)
         if (!isMatch) return res.status(400).send('BAD_PARAMS')
 
-        let token = jwt.sign(user, config.auth.secret, {
-          expiresIn: "15 days"
-        })
+        let token = jwt.sign(user, config.auth.secret)
 
         return res.status(200).jsonp({
           user: user,

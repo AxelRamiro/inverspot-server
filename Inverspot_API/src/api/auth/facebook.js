@@ -47,9 +47,7 @@ router.post('/auth/facebook', (req, res) => {
           if (resUser.status == 'inactive') return res.status(401).send('UNAUTHORIZED')
 
           // Cretae session Token if user active
-          let token = jwt.sign(resUser, config.auth.secret, {
-            expiresIn: "15 days"
-          })
+          let token = jwt.sign(resUser, config.auth.secret)
           return res.status(200).jsonp({
             user: resUser,
             token: `Bearer ${token}`
@@ -69,9 +67,7 @@ router.post('/auth/facebook', (req, res) => {
             if (err) return res.status(500).send(err.message)
 
             // Create session Token
-            let token = jwt.sign(resUser, config.auth.secret, {
-              expiresIn: "15 days"
-            })
+            let token = jwt.sign(resUser, config.auth.secret)
             return res.status(200).jsonp({
               user: resUser,
               token: `Bearer ${token}`
@@ -111,9 +107,7 @@ router.post('/auth/facebook', (req, res) => {
 //           if (resUser.status == 'inactive') return done(null, false)
 //
 //           // Cretae session Token if user active
-//           let token = jwt.sign(resUser, config.auth.secret, {
-//             expiresIn: "15 days"
-//           })
+//           let token = jwt.sign(resUser, config.auth.secret)
 //           return done(null,{
 //             user: resUser,
 //             token: `Bearer ${token}`
@@ -133,9 +127,7 @@ router.post('/auth/facebook', (req, res) => {
 //             if (err) return done(err)
 //
 //             // Create session Token
-//             let token = jwt.sign(resUser, config.auth.secret, {
-//               expiresIn: "15 days"
-//             })
+//             let token = jwt.sign(resUser, config.auth.secret)
 //             return done(null, {
 //               user: resUser,
 //               token: `Bearer ${token}`
