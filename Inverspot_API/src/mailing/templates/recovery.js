@@ -151,7 +151,7 @@ module.exports = (params, config) => {
                               <div style="line-height: 24px;">
                                               <font face="AvenirNext-Bold" size="3" color="#000" style="font-size: 22px;">
                                               <strong style="font-family: AvenirNext-Bold; font-size: 22px; color: black;">
-                                                <a href="${config.mailing.recoveryURL}${params.verifyUrl}" >
+                                                <a href="${(params.level === 'admin' || params.level== 'asesor') ? config.mailing.recoveryUrlAdmin : config.mailing.recoveryURL}${params.verifyUrl}" >
                                                    <button class="button large-invertion" style="width: 80%;">RECUPERAR CONTRASEÑA</button>
                                                 </a>
                                               </strong></font>

@@ -4,7 +4,7 @@ module.exports = (router, User, sendMail) => {
 
       if (err) return res.status(500).send(err.message)
       if (!user) return res.status(404).send('NOT_FOUND')
-      sendMail({to: user.email, subject: `¡Recupara tu contraseña ${user.name}`}, 'recovery', { name:user.name, verifyUrl:user.checker}, console.log)
+      sendMail({to: user.email, subject: `¡Recupara tu contraseña ${user.name}`}, 'recovery', { name:user.name, verifyUrl:user.checker, level:user.level}, console.log)
 
       return res.status(200).send('ok')
     })
