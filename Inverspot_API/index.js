@@ -37,22 +37,21 @@ const authenticate = jwtMiddleware({
    return null;
  }
 }).unless({
-  path: ['/api/auth',
-  /^\/api\/auth\/.*/, // -----> Quit authenticate path /api/auth/...
-  {
-    url: '/api/property',
-    methods: ['GET']  // -----> unique method
-  },
-  {
-    url: '/api/work-progress',
-    methods: ['GET']  // -----> unique method
-  },{
-    url: '/api/user',
-    methods: ['GET']
-  },{
-    url: '/api/work-progress',
-    methods: ['GET']
-  }]})
+  path: [
+    '/api/auth',
+    /^\/api\/auth\/.*/, // -----> Quit authenticate path /api/auth/...
+    {
+      url: '/api/property',
+      methods: ['GET']  // -----> unique method
+    },
+    {
+      url: '/api/user',
+      methods: ['GET']
+    },{
+      url: '/api/work-progress',
+      methods: ['GET']
+    }]
+  })
 // Middleware error authenticate
 const errorAuthenticate = (err, req, res, next) => {
   if (err.name === 'UnauthorizedError') res.status(401).send('Invalid token...')
