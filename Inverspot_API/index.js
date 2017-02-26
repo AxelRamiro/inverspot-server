@@ -45,6 +45,9 @@ const authenticate = jwtMiddleware({
   },{
     url: '/api/user',
     methods: ['GET']
+  },{
+    url: '/api/work-progress',
+    methods: ['GET']
   }]})
 // Middleware error authenticate
 const errorAuthenticate = (err, req, res, next) => {
