@@ -236,6 +236,5 @@ module.exports = (params, config) => {
 
           </td></tr>
       </table>
-
-  </div> `
+</div>`
 }
