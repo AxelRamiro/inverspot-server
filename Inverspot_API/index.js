@@ -42,6 +42,10 @@ const authenticate = jwtMiddleware({
   {
     url: '/api/property',
     methods: ['GET']  // -----> unique method
+  },
+  {
+    url: '/api/work-progress',
+    methods: ['GET']  // -----> unique method
   },{
     url: '/api/user',
     methods: ['GET']
