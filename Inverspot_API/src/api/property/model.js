@@ -35,16 +35,8 @@ module.exports = (mongoose) => {
       expectedAnnualYield:    Number,
       expectedUtility:        Number
     },
-    capitalOutflow:         {
-      totalCost:              Number,
-      salePrice:              Number,
-      salesCommission:        Number,
-      utility:                Number,
-      estimatedTime:          Number,
-      yieldIn18Months:        Number,
-      annualYield:            Number
-    },
-    supplementaryData:        []
+    capitalOutflow:    [],
+    supplementaryData: []
   },{timestamps:                true})
 
 
