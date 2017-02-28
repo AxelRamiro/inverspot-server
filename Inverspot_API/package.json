@@ -1,6 +1,6 @@
 {
   "name": "inverspot",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "node index.js"
@@ -21,5 +21,15 @@
     "passport-facebook": "^2.1.1",
     "passport-local": "^1.0.0",
     "uuid": "^3.0.1"
+  },
+  "apidoc": {
+    "name": "Inverspot",
+    "version": "0.1.0",
+    "description": "API general Inverspot, para conexión de clientes.",
+    "title": "API - Inversport",
+    "url" : "",
+    "template": {
+      "forceLanguage": "es"
+    }
   }
 }

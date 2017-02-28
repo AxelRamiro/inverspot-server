@@ -1,4 +1,5 @@
 {
   "port" : 8080,
-  "uploadPath": "/home/jorge/upload/"
+  "uploadPath": "/home/jorge/upload/",
+  "apidocUrl": "/apidoc"
 }

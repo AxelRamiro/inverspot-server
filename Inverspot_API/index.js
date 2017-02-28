@@ -25,6 +25,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json({limit: '2mb'}))
 app.use(morgan('dev'))
 app.use(passport.initialize())
+app.use(`${config.server.apidocUrl}`, express.static('apidoc'))
 // Authenticate config
 const authenticate = jwtMiddleware({
   secret: config.auth.secret,
