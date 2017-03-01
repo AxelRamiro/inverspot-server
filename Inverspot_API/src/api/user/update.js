@@ -22,7 +22,7 @@
 *   {
 *     "select": "-_id name password"
 *   }
-*  @apiParam (Body) {String} _id Nombre de usuario.
+*  @apiParam (Body) {String} _id Id de usuario.
 *  @apiParam (Body) {String} [name] Nombre de usuario.
 *  @apiParam (Body) {String} [email] Correo de usuario.
 *  @apiParam (Body) {Number} [telephone] Número telefónico del usuario.
