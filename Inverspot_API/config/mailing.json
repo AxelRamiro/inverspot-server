@@ -15,5 +15,7 @@
   "logoImg": "http://192.169.174.96/is-img/9ff1961d-0e06-4dba-928b-58e1c1771bfd.png",
   "adminUserUrl": "http://192.169.174.96/",
   "recoveryURL": "http://192.169.174.96/recovery/",
-  "recoveryUrlAdmin": "http://192.169.174.96/recoveryAdmin/"
+  "recoveryUrlAdmin": "http://192.169.174.96/recoveryAdmin/",
+  "loginUser": "http://192.169.174.96/user",
+  "loginAdmin": "http://192.169.174.96/admin"
 }

@@ -187,7 +187,7 @@ module.exports = (params, config) => {
                               <div style="line-height: 24px;">
                                               <font face="AvenirNext-Bold" size="3" color="#000" style="font-size: 22px;">
                                               <strong style="font-family: AvenirNext-Bold; font-size: 22px; color: black;">
-                                                 <a href="${config.mailing.domain}" class="button large-invertion" style="width: 60%;">Iniciar sesión en Inverspot</a>
+                                                 <a href="${(params.level === 'admin' || params.level== 'asesor') ? config.mailing.loginAdmin : config.mailing.loginUser}" class="button large-invertion" style="width: 60%;">Iniciar sesión en Inverspot</a>
                                               </strong></font>
                               </div>
                               <div style="height: 40px; line-height: 40px; font-size: 10px;"> </div>

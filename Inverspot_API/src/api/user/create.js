@@ -62,7 +62,7 @@ module.exports = (router, User, sendMail) => {
     user.save ((err, resUser) => {
       if (err) return res.status(500).send(err.message)
       // Envio de Email de bienvenida tipo admin, es decir como si un administrador da de alta la cuenta.
-      sendMail({to: resUser.email, subject: `¡${resUser.name}, Te damos la bienvenida a Inverspot!`}, 'welcome-admin', {email: resUser.email, password: req.body.password}, console.log)
+      sendMail({to: resUser.email, subject: `¡${resUser.name}, Te damos la bienvenida a Inverspot!`}, 'welcome-admin', {email: resUser.email, password: req.body.password, level: resUser.level}, console.log)
       // Regresa el Objeto usaurio completo como está guardao en la base de dartos.
       res.status(201).jsonp(resUser)
     })
