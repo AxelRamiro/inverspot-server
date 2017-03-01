@@ -4,6 +4,7 @@
 * @apiName Crear Usuario
 * @apiGroup Usuario
 * @apiDescription Crear diferentes usuarios (User, Admin, Asesor y Invesment), automáticamente envia el correo de creación de usuario por admin, con el correo y contraseña para loguearse.
+* @apiPermission admin
 *
 * @apiParamExample {json} Body
 *   {

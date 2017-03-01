@@ -4,6 +4,7 @@
 * @apiName Actualizar Usuario
 * @apiGroup Usuario
 * @apiDescription Actualiza los datos del usuario por medio del Id, todos los datos que se envien son actualizados aunque sus valores sean los mismos.
+* @apiPermission admin
 *
 * @apiParamExample {json} Body
 *   {

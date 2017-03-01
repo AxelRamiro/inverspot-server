@@ -4,6 +4,7 @@
 * @apiName Eliminar Usuario
 * @apiGroup Usuario
 * @apiDescription Elimina un usuario por medio de una busqueda de Id.
+* @apiPermission admin
 *
 * @apiParamExample {json} Body
 *   {

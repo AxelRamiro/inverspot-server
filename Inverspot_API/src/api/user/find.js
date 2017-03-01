@@ -40,6 +40,7 @@ module.exports = (router, User) => {
 
     User.find(filter,select,query,(err,user) => {
       if (err) return res.status(500).send(err.message)
+      // regresa la respuesta de la busqueda, aun si no encuentra algo en la busqueda regresa []
       res.status(200).jsonp(user)
     })
   })
