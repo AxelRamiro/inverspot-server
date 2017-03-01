@@ -16,7 +16,7 @@ module.exports = (mongoose,bcrypt) => {
     state:                String,
     asesor:             {type:mongoose.Schema.Types.ObjectId, ref: 'User'},
     invesmentData:        {
-      name:                 String,
+      name:                 {type: String, default: ''},
       firstName :           String,
       lastName :            String,
       sex :                 String,

@@ -56,12 +56,13 @@
 module.exports = (router, User, sendMail) => {
   router.post('/user', (req, res) => {
     let user = new User (req.body)
-    user.invesmentData = {
-      name: req.body.name
-    }
+
+    // Guarda el nuvo usuario en la base de datos, en este punto todos los valores por defecto son agregados.
     user.save ((err, resUser) => {
       if (err) return res.status(500).send(err.message)
+      // Envio de Email de bienvenida tipo admin, es decir como si un administrador da de alta esta cuenta.
       sendMail({to: resUser.email, subject: `¡${resUser.name}, Te damos la bienvenida a Inverspot!`}, 'welcome-admin', {email: resUser.email, password: req.body.password}, console.log)
+      // Regresa el Objeto usaurio completo como esta guardao en la base de dartos.
       res.status(201).jsonp(resUser)
     })
   })
