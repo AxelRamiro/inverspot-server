@@ -22,11 +22,11 @@
 *  @apiParam (Body) {String} email Correo de usuario, es obligatorio.
 *  @apiParam (Body) {Number} [telephone] Número telefónico del usuario.
 *  @apiParam (Body) {String} password Contraseña del usuario, es obligatorio.
-*  @apiParam (Body) {String} level =user Nivel del usuario, posibles [user,admin,asesor,invesment].
-*  @apiParam (Body) {String} status =inactive Estado del usuario, por defecto esta inactivo hasta hacer la validación con su correo [inactive,active].
+*  @apiParam (Body) {String} [level] =user Nivel del usuario, posibles [user,admin,asesor,invesment].
+*  @apiParam (Body) {String} [status] =inactive Estado del usuario, por defecto esta inactivo hasta hacer la validación con su correo [inactive,active].
 *  @apiParam (Body) {String} asesor Id del usuario asesor.
-*  @apiParam (Body) {String} contactFrom De donde los contacta [Facebook].
-*  @apiParam (Body) {Object} invesmentData Datos de inversionista, datos personales, datos bancarios y datos de beneficiarios, ver modelo User.
+*  @apiParam (Body) {String} [contactFrom] De donde los contacta [Facebook].
+*  @apiParam (Body) {Object} [invesmentData] Datos de inversionista, datos personales, datos bancarios y datos de beneficiarios, ver modelo User.
 *
 * @apiSuccessExample {json} 201 CREATED
 *   {
