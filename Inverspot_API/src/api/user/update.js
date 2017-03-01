@@ -1,5 +1,5 @@
 /**
-* @api {put} /user Actualizar Usuario
+* @api {put} /user Actualizar Usuario.
 * @apiVersion 0.1.0
 * @apiName Actualizar Usuario
 * @apiGroup Usuario

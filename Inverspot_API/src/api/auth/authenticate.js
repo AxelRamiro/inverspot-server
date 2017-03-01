@@ -1,5 +1,5 @@
 /**
-* @api {post} /auth Autenticación de usuarios
+* @api {post} /auth Autenticación de usuarios.
 * @apiVersion 0.1.0
 * @apiName Autenticación
 * @apiGroup Autenticación

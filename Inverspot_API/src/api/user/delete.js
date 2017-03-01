@@ -1,5 +1,5 @@
 /**
-* @api {delete} /user Eliminar usuario
+* @api {delete} /user Eliminar usuario.
 * @apiVersion 0.1.0
 * @apiName Eliminar Usuario
 * @apiGroup Usuario

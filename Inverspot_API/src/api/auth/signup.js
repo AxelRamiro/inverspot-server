@@ -1,5 +1,5 @@
 /**
-*  @api {post} /auth/signup Registrar Usuario
+*  @api {post} /auth/signup Registrar Usuario.
 * @apiVersion 0.1.0
 * @apiName Registrar
 * @apiGroup Autenticación

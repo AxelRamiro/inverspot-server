@@ -1,5 +1,5 @@
 /**
-* @api {post} /user Crear usuario
+* @api {post} /user Crear usuario.
 * @apiVersion 0.1.0
 * @apiName Crear Usuario
 * @apiGroup Usuario
