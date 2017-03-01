@@ -1,19 +1,19 @@
 {
   "connection" : {
-    "host"   : "smtp.gmail.com",
+    "host"   : "p3plcpnl0489.prod.phx3.secureserver.net",
     "port"   : 465,
     "secure" : true,
     "auth"   : {
-      "user" : "axel.ramiro.92@gmail.com",
-      "pass" : "fwdajvasjzpvboqu"
+      "user" : "no-reply@inverspot.mx",
+      "pass" : "#Noreply2017"
     }
   },
-  "from" : "\"Inverspot\" <hola@inverspot.mx>",
+  "from" : "\"Inverspot\" <no-reply@inverspot.mx>",
   "cc": "\"Contacto\" <villak@startuphidalgo.com>",
   "domain": "http://192.169.174.96/",
   "imagesUrl": "http://192.169.174.96/is-img/",
   "logoImg": "http://192.169.174.96/is-img/9ff1961d-0e06-4dba-928b-58e1c1771bfd.png",
-  "adminUserUrl": "http://192.169.174.96/",
-  "recoveryURL": "http://192.169.174.96/recovery/",
-  "recoveryUrlAdmin": "http://192.169.174.96/recoveryAdmin/"
+  "adminUserUrl": "http://192.169.174.96/user/",
+  "recoveryURL": "http://192.169.174.96/user/#/recovery/",
+  "recoveryUrlAdmin": "http://192.169.174.96/#/change-pass/"
 }

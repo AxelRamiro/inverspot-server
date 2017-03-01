@@ -158,7 +158,7 @@ module.exports = (params, config) => {
                              <div style="height: 40px; line-height: 40px; font-size: 10px;"> </div>
                                               <font face="AvenirNext-Bold" size="3" color="#000" style="font-size: 22px;">
                                               <strong style="font-family: AvenirNext-Bold; font-size: 22px; color: black;">
-                                                 <a href="${config.mailing.domain}" class="button large-invertion" style="width: 60%;">Comienza a invertir</a>
+                                                 <a href="${config.mailing.domain}user/#/verify/${params.verifyUrl}" class="button large-invertion" style="width: 60%;">Comienza a invertir</a>
                                               </strong></font>
                               <div style="height: 40px; line-height: 40px; font-size: 10px;"> </div>
                           </td>
