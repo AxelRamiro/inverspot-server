@@ -25,8 +25,8 @@
 *  @apiParam (Body) {String} _id Nombre de usuario.
 *  @apiParam (Body) {String} [name] Nombre de usuario.
 *  @apiParam (Body) {String} [email] Correo de usuario.
-*  @apiParam (Body) {Number} [telephone] Numero telefonico del usuario.
-*  @apiParam (Body) {String} [password] Contraseña del usuario incriptada.
+*  @apiParam (Body) {Number} [telephone] Número telefónico del usuario.
+*  @apiParam (Body) {String} [password] Contraseña del usuario encriptada.
 *  @apiParam (Body) {String} [level] Nivel del usuario, posibles [user,admin,asesor,invesment].
 *  @apiParam (Body) {String} [status] Estado del usuario, por defecto esta inactivo hasta hacer la validacion con su correo [inactive,active], si es actualizada a active elimina el campo checker, de lo contrario lo genera.
 *  @apiParam (Body) {String} [asesor] Id del usuario asesor.

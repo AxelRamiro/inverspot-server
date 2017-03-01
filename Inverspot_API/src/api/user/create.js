@@ -46,7 +46,7 @@
 *
 *  @apiSuccess (201 CREATED) {Object} user Objeto de usuario, tal como lo manda la base de datos.
 *  @apiSuccess (201 CREATED) {String} user._id Id de usuario, generado por la base de datos.
-*  @apiSuccess (201 CREATED) {String} user.password Contraseña incriptada.
+*  @apiSuccess (201 CREATED) {String} user.password Contraseña encriptada.
 *  @apiSuccess (201 CREATED) {String} user.checker Token de formato UUID v4, para hacer la activación y recuperación de contraseña, se genera automáticamente en el modelo User.
 *  @apiSuccess (201 CREATED) {String} user.updatedAt Estampa de tiempo de la última actualización.
 *  @apiSuccess (201 CREATED) {String} user.createdAt Estampa de tiempo de cuando fue creado.
