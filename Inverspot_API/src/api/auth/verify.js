@@ -10,7 +10,7 @@ module.exports = (router, User, jwt, config, sendMail) => {
       if (!user) return res.status(404).send('NOT_FOUND')
 
       let token = jwt.sign(user, config.auth.secret)
-      if (!req.query.password) sendMail({to: user.email, subject: `${user.name} tu registro esta completo`}, 'welcome', {name: user.name}, console.log)
+      // if (!req.query.password) sendMail({to: user.email, subject: `${user.name} tu registro esta completo`}, 'welcome', {name: user.name}, console.log)
       return res.status(200).jsonp({
         user:user,
         token:`Bearer ${token}`
