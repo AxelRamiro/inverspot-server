@@ -1,6 +1,6 @@
 {
-  "clientID" : "1430245840616178",
-  "clientSecret": "4d5c7b426ee7429379c52ecf2e2ed142",
+  "clientID" : "296515120767797",
+  "clientSecret": "ce5a96ccfbcc3582be8fd9413518083a",
   "callbackURL": "http://192.169.174.96:8080/api/auth/facebook/callback",
   "passReqToCallback": true,
   "profileFields": ["emails", "name", "id"],

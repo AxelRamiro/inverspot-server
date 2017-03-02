@@ -1,11 +1,11 @@
 const FacebookStrategy = require('passport-facebook').Strategy
-
+const request = require('request')
 
 module.exports = (router, User, jwt, config, passport) => {
 
   const providers = {
     facebook: {
-      url: 'https://graph.facebook.com/me'
+      url: 'https://graph.facebook.com/me?fields=name,email'
     }
   }
 
@@ -30,12 +30,15 @@ router.post('/auth/facebook', (req, res) => {
 
   validateWithProvider(network, socialToken).then((profile) => {
     if (!req.user){ // ----> check if the user is already logged in
-
+      console.log('---------------------------');
+      console.log('PROFILE', profile);
+      console.log('---------------------------');
+      const email = profile.email ? profile.email : ''
       //  user find by email or facebook id
       User.findOne({
         $or: [
           {'facebook': profile.id},
-          {'email': profile.emails[0].value || ''}
+          { email }
         ]}, (err, resUser) => {
 
         if (err) return res.status(500).send(err.message)
@@ -57,9 +60,9 @@ router.post('/auth/facebook', (req, res) => {
 
           //  Create User
           let user = new User({
-            email: profile.emails[0].value || '',
+            email,
             facebook: profile.id,
-            name: profile.name.givenName,
+            name: profile.name,
             status: 'active'
           })
 
