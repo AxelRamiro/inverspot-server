@@ -1,3 +1,14 @@
+/**
+* @api {get} /builder Busqueda de Constructor.
+* @apiVersion 0.1.0
+* @apiName Busqueda de Constructor
+* @apiGroup Constructor
+* @apiDescription Busqueda de constructores bajo criterios personalizados y respuestas personalizadas (sort, limit, select). Al realizar busqeudas sin criterios (filtros) devuelve todos los registros.
+* @apiPermission admin
+*
+*
+*
+*/
 module.exports = (router, Builder) => {
   router.get('/builder', (req, res) => {
 
