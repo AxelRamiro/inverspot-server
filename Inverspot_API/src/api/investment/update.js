@@ -5,6 +5,9 @@
 * @apiGroup Inversión
 * @apiDescription Búsqueda de inversiones por id para actualizar sus parámetros, a la par se actualizan las inversiones en las propiedades.
 * @apiPermission admin
+* @apiUse authHeaders
+* @apiUse successUpdate
+* @apiUse errorsAPI
 *
 * @apiParamExample {json} Body
 *      {
@@ -29,15 +32,6 @@
 *       "updatedAt": "2017-02-21T19:55:04.625Z",
 *       "createdAt": "2017-02-21T19:55:04.625Z",
 *     }
-*
-* @apiSuccess (200 OK) {Object} invesment Objeto inversión, tal y como aparece en la base de datos.
-* @apiSuccess (200 OK) {String} invesment.updatedAt Estampa de tiempo de la última actualización de los datos en la BD.
-*
-* @apiError (500) {String} Error  Mensaje de error del servidor, a la hora de actualizar la inversión.
-* @apiError (404) {String} NOT_FOUND  El id de la inversión no coincide con ninguna en la base de datos.
-*
-* @apiErrorExample {String} 404
-*     NOT_FOUND
 */
 module.exports = (router, Investment, Property) => {
   router.put('/investment', (req, res) => {

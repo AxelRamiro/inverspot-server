@@ -6,6 +6,8 @@
 * @apiDescription Crea una nueva inversión, activa los correos notificadores y actualiza los el total de inversiónes vendidas de las propiedades.
 * @apiPermission admin
 * @apiUse authHeaders
+* @apiUse success201
+* @apiUse errorsAPI
 *
 * @apiParamExample {json} Body
 *     {
@@ -30,12 +32,7 @@
 *       "updatedAt": "2017-02-21T19:55:04.625Z",
 *       "createdAt": "2017-02-21T19:55:04.625Z",
 *     }
-*
-* @apiSuccess (201) {String} _id Id de inversión, asignado por la BD, es único en toda la base de datos.
-* @apiSuccess (201) {String} updatedAt Estampa de tiempo de la última actualización de los datos en la BD.
-* @apiSuccess (201) {String} createdAt Estampa de tiempo de la creación en la BD.
-*
-* @apiError (500) {String} Error  Mensaje de error del servidor, a la hora de crear la inversión.
+* @apiSuccess (Success 201) {Object} investment Objeto con los datos de la inversión, como se encuentran guardados en la base de datos.
 */
 module.exports = (router, Investment, Property, User, sendMail) => {
 

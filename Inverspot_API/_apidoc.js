@@ -64,6 +64,7 @@
 * @apiDefine successDelete Respuesta exitosa de eliminar documento.
 * @apiVersion 0.1.0
 * @apiSuccess (Success 200) {Object} Object Devuelve todo el objeto eliminado.
+* @apiError (Error) NOT_FOUND  El id no coincide con ningun registro.
 */
 
 /**
@@ -71,6 +72,7 @@
 * @apiVersion 0.1.0
 * @apiSuccess (Success 200) {Object} Object Devuelve todo el objeto actualizado.
 * @apiSuccess (Success 200) {String} object.updatedAt Estampa de tiempo de la última actualización de los datos en la BD.
+* @apiError (Error) NOT_FOUND  El id no coincide con ningun registro.
 */
 
 // Definición de errores

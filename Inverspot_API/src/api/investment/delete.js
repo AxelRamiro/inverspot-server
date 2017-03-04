@@ -5,6 +5,9 @@
 * @apiGroup Inversión
 * @apiDescription Búsqueda de inversiones por id para eliminar, a la par se actualizan las inversiones en las propiedades.
 * @apiPermission admin
+* @apiUse authHeaders
+* @apiUse successDelete
+* @apiUse errorsAPI
 *
 * @apiParamExample {json} Body
 *     {
@@ -23,14 +26,6 @@
 *       "updatedAt": "2017-02-21T19:55:04.625Z",
 *       "createdAt": "2017-02-21T19:55:04.625Z",
 *     }
-*
-* @apiSuccess (200 OK) {Object} invesment Objeto inversion recién eliminado
-*
-* @apiError (500) {String} Error  Mensaje de error del servidor, a la hora de eliminar la inversión.
-* @apiError (404) {String} NOT_FOUND  El id de la inversión no coincide con ninguna en la base de datos.
-*
-* @apiErrorExample {String} 404
-*     NOT_FOUND
 */
 module.exports = (router, Investment, Property) => {
   router.delete('/investment', (req, res) => {
