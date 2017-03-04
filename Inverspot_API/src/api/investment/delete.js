@@ -14,8 +14,6 @@
 *       "_id": "58af906ff9a2b00e9ec1116b"
 *     }
 *
-* @apiParam (Body) {String} _id Id de la inversión a eliminar.
-*
 * @apiSuccessExample {json} 200 OK
 *     {
 *       "sharesNumber": 5,

@@ -9,6 +9,7 @@
 *     }
 * @apiHeader (Headers-Data) {String} Content-Type Por lo regular la API soporta application/json, para el envío de los datos de la consulta (body)
 * @apiHeader (Headers-Data) {String} Authorization Json Web Token de autentificacion.
+* @apiError (Error) UNAUTHORIZED  Token de sesión JWT(Json Web Token) no encontrado o invalido.
 */
 
 /**
@@ -19,6 +20,7 @@
 *       "Authorization": "Bearer eyJhbGci...."
 *     }
 * @apiHeader (Headers-Data) {String} Authorization Json Web Token de autentificacion.
+* @apiError (Error) UNAUTHORIZED  Token de sesión JWT(Json Web Token) no encontrado o invalido.
 */
 
 /**
@@ -41,6 +43,7 @@
 *     }
 * @apiHeader (Headers-File) {String} Content-Type Si queremos mandar archivos la API los recibe con multipart/form-data.
 * @apiHeader (Headers-File) {String} Authorization Json Web Token de autentificacion.
+* @apiError (Error) UNAUTHORIZED  Token de sesión JWT(Json Web Token) no encontrado o invalido.
 */
 
 // Definición de permisos
@@ -63,6 +66,7 @@
 /**
 * @apiDefine successDelete Respuesta exitosa de eliminar documento.
 * @apiVersion 0.1.0
+* @apiParam (Body) {String} _id Id del documento a eliminar.
 * @apiSuccess (Success 200) {Object} Object Devuelve todo el objeto eliminado.
 * @apiError (Error) NOT_FOUND  El id no coincide con ningun registro.
 */

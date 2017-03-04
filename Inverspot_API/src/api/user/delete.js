@@ -14,8 +14,6 @@
 *     "_id": "58b02dea08215b5500830f8f"
 *   }
 *
-*  @apiParam (Body) {String} _id Id de usuario.
-*
 * @apiSuccessExample {json} 200 OK
 *   {
 *    "name": "Lorem",

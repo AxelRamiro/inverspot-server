@@ -15,7 +15,6 @@
 *     "select": "-_id"
 *   }
 *
-* @apiParam (Body) {String} _id Id de la constructora a eliminar.
 * @apiParam (Body) {String} [select] Establece los campos del documento para regresar.
 *
 * @apiSuccessExample {json} 200 OK
