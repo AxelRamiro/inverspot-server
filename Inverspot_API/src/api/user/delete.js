@@ -5,6 +5,9 @@
 * @apiGroup Usuario
 * @apiDescription Elimina un usuario por medio de una busqueda de Id.
 * @apiPermission admin
+* @apiUse authHeaders
+* @apiUse successDelete
+* @apiUse errorsAPI
 *
 * @apiParamExample {json} Body
 *   {
@@ -29,10 +32,6 @@
 *    "updatedAt": "2017-02-24T12:41:04.282Z",
 *    "createdAt": "2017-02-24T12:41:04.282Z",
 *   }
-*
-*  @apiSuccess (200 OK) {Object} user Objeto de usuario eliminado, tal como lo manda la base de datos, explicado en los endpoints anteriores.
-*
-* @apiError (500) {String} Error  Mensaje de error del servidor, a la hora de actualizar.
 */
 module.exports = (router, User) => {
   router.delete('/user', (req, res) => {

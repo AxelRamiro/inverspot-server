@@ -12,6 +12,16 @@
 */
 
 /**
+* @apiDefine headersPublic Headers sin autenticación.
+* @apiVersion 0.1.0
+* @apiHeaderExample {json} Headers-Data:
+*     {
+*       "Content-Type": "application/json"
+*     }
+* @apiHeader (Headers-Data) {String} Content-Type Por lo regular la API soporta application/json, para el envío de los datos de la consulta (body)
+*/
+
+/**
 * @apiDefine fileHeaders Headers con imagen.
 * @apiVersion 0.1.0
 * @apiHeaderExample {json} Headers-File:
@@ -40,9 +50,34 @@
 * @apiSuccess (Success 201) {String} object.createdAt Estampa de tiempo de la creación en la BD.
 */
 
+/**
+* @apiDefine successDelete Respuesta exitosa de eliminar documento.
+* @apiVersion 0.1.0
+* @apiSuccess (Success 200) {Object} Object Devuelve todo el objeto eliminado.
+*/
+
+/**
+* @apiDefine successUpdate Respuesta exitosa de actualizar documento.
+* @apiVersion 0.1.0
+* @apiSuccess (Success 200) {Object} Object Devuelve todo el objeto actualizado.
+* @apiSuccess (Success 200) {String} object.updatedAt Estampa de tiempo de la última actualización de los datos en la BD.
+*/
+
 // Definición de errores
 /**
 * @apiDefine errorsAPI Error del servidor.
 * @apiVersion 0.1.0
 * @apiError (Error) 500  Ha ocurrido un error en la consulta, se envía el mensaje de error del servidor.
+*/
+
+
+// Definición de Parametros Generales
+/**
+* @apiDefine paramsFindQuery Parametros de búsqueda.
+* @apiVersion 0.1.0
+* @apiParam (Query) {String} [select] Nombre de los campos que se desea que regrese ejemplo [-_id name] omite el id y solo devuelve los nombres.
+* @apiParam (Query) {String} [filter] Criterios de búsqueda, puede ser cualquier campo del documento o un conjunto de ellos, se puede agregar operadores $or, $in, $and, $gt, $lt.
+* @apiParam (Query) {String} [query] Criterios de respuesta, restringe y da formato a los campos de respuesta de la búsqueda usando los operadores [limit, sort, select].
+*
+* @apiSuccess (Success 200) {Array} Response Array de documentos que coinciden con los filtros de búsqueda y en el formato solicitado con query.
 */

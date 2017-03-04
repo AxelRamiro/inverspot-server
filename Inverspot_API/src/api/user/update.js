@@ -5,6 +5,9 @@
 * @apiGroup Usuario
 * @apiDescription Actualiza los datos del usuario por medio del Id, todos los datos que se envien son actualizados aunque sus valores sean los mismos.
 * @apiPermission admin
+* @apiUse authHeaders
+* @apiUse successUpdate
+* @apiUse errorsAPI
 *
 * @apiParamExample {json} Body
 *   {
@@ -52,10 +55,6 @@
 *    "updatedAt": "2017-02-24T12:41:04.282Z",
 *    "createdAt": "2017-02-24T12:41:04.282Z",
 *   }
-*
-*  @apiSuccess (200 OK) {Object} user Objeto de usuario, tal como lo manda la base de datos, explicado en los endpoints anteriores.
-*
-* @apiError (500) {String} Error  Mensaje de error del servidor, a la hora de actualizar.
 */
 module.exports = (router, User) => {
   router.put('/user', (req, res) => {

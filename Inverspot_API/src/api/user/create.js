@@ -5,6 +5,9 @@
 * @apiGroup Usuario
 * @apiDescription Crear diferentes usuarios (User, Admin, Asesor y Invesment), automáticamente envia el correo de creación de usuario por admin, con el correo y contraseña para loguearse.
 * @apiPermission admin
+* @apiUse authHeaders
+* @apiUse success201
+* @apiUse errorsAPI
 *
 * @apiParamExample {json} Body
 *   {
@@ -45,14 +48,9 @@
 *    "createdAt": "2017-02-24T12:41:04.282Z",
 *   }
 *
-*  @apiSuccess (201 CREATED) {Object} user Objeto de usuario, tal como lo manda la base de datos.
-*  @apiSuccess (201 CREATED) {String} user._id Id de usuario, generado por la base de datos.
-*  @apiSuccess (201 CREATED) {String} user.password Contraseña encriptada.
-*  @apiSuccess (201 CREATED) {String} user.checker Token de formato UUID v4, para hacer la activación y recuperación de contraseña, se genera automáticamente en el modelo User.
-*  @apiSuccess (201 CREATED) {String} user.updatedAt Estampa de tiempo de la última actualización.
-*  @apiSuccess (201 CREATED) {String} user.createdAt Estampa de tiempo de cuando fue creado.
-*
-* @apiError (500) {String} Error  Mensaje de error del servidor, a la hora de crear el usuario.
+*  @apiSuccess (Success 201) {Object} user Objeto de usuario, tal como lo manda la base de datos.
+*  @apiSuccess (Success 201) {String} user.password Contraseña encriptada.
+*  @apiSuccess (Success 201) {String} user.checker Token de formato UUID v4, para hacer la activación y recuperación de contraseña, se genera automáticamente en el modelo User.
 */
 module.exports = (router, User, sendMail) => {
   router.post('/user', (req, res) => {
