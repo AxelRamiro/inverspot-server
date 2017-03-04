@@ -5,6 +5,7 @@
 * @apiGroup Inversión
 * @apiDescription Crea una nueva inversión, activa los correos notificadores y actualiza los el total de inversiónes vendidas de las propiedades.
 * @apiPermission admin
+* @apiUse authHeaders
 *
 * @apiParamExample {json} Body
 *     {

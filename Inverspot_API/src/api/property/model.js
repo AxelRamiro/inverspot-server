@@ -6,7 +6,7 @@ module.exports = (mongoose) => {
     image:                String,
     address:              {
       street:               String,
-      number:               String,
+      number:               Number,
       suburb:               String,
       city:                 String,
       zipCode:              Number,
