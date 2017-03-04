@@ -5,6 +5,9 @@
 * @apiGroup Constructor
 * @apiDescription Búsqueda de constructores bajo criterios personalizados y respuestas personalizadas (sort, limit, select). Al realizar búsquedas sin criterios (filtros) devuelve todos los registros.
 * @apiPermission admin
+* @apiUse authHeadersQuery
+* @apiUse paramsFindQuery
+* @apiUse errorsAPI
 *
 * @apiParamExample {json} Query
 *    {
@@ -13,10 +16,6 @@
 *      "query" : '{ "limit": 5, "sort":"-name"}'
 *    }
 *
-* @apiParam (Query) {String} [select] Nombre de los campos que se desea que regrese ejemplo [-_id name].
-* @apiParam (Query) {String} [filter] Criterios de búsqueda, puede ser cualquier campo del usuario o un conjunto de ellos, se puede agregar operadores $or, $in, $and, $gt, $lt.
-* @apiParam (Query) {String} [query] Criterios de respuesta, restringe y da formato a los campos de respuesta de la búsqueda usando los operadores [limit, sort, select].
-*
 * @apiSuccessExample {json} 200 OK
 *     [
 *     	{
@@ -24,9 +23,6 @@
 *     		"yearsWork": 4
 *     	}
 *     ]
-*
-* @apiSuccess (200 OK) {Object[]} builder Lista de constructoras que coinciden con el filtro de búsqueda, regresado como fue solicitado con Query.
-* @apiError (500) {String} Error  Mensaje de error del servidor, a la hora de buscar.
 */
 module.exports = (router, Builder) => {
   router.get('/builder', (req, res) => {

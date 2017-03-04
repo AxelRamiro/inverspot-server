@@ -12,6 +12,16 @@
 */
 
 /**
+* @apiDefine authHeadersQuery Headers con autenticación.
+* @apiVersion 0.1.0
+* @apiHeaderExample {json} Headers-Data:
+*     {
+*       "Authorization": "Bearer eyJhbGci...."
+*     }
+* @apiHeader (Headers-Data) {String} Authorization Json Web Token de autentificacion.
+*/
+
+/**
 * @apiDefine headersPublic Headers sin autenticación.
 * @apiVersion 0.1.0
 * @apiHeaderExample {json} Headers-Data:

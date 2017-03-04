@@ -4,7 +4,6 @@
 * @apiName búsqueda
 * @apiGroup Usuario
 * @apiDescription Busca bajo criterios personalizados, y respuesta personalizada con queys (limit, sort ...) y select.  Al realizar una búsqueda sin criterios devuelve todos los usuarios.
-* @apiUse headersPublic
 * @apiUse paramsFindQuery
 * @apiUse errorsAPI
 *

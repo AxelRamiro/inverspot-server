@@ -5,6 +5,9 @@
 * @apiGroup Constructor
 * @apiDescription Búsqueda de constructora por id para eliminar, al eliminar regresa los datos eliminados.
 * @apiPermission admin
+* @apiUse authHeaders
+* @apiUse successDelete
+* @apiUse errorsAPI
 *
 * @apiParamExample {json} Body
 *   {
@@ -25,10 +28,6 @@
 *     	"completedWorks": 10,
 *     	"website": "www.google.com"
 *     }
-*
-* @apiSuccess (200 OK) {Object} builder Objeto constructora eliminado
-*
-* @apiError (500) {String} Error  Mensaje de error del servidor, a la hora de buscar y elimnar.
 */
 module.exports = (router, Builder) => {
   router.delete('/builder', (req, res) => {

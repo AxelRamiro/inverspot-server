@@ -5,6 +5,9 @@
 * @apiGroup Constructor
 * @apiDescription Crea un constructor, también nombrado desarrolladora o constructora.
 * @apiPermission admin
+* @apiUse authHeaders
+* @apiUse success201
+* @apiUse errorsAPI
 *
 * @apiParamExample {json} Body
 *    {
@@ -29,12 +32,7 @@
 *	     "createdAt": "2017-02-21T19:55:04.625Z",
 *      "_id": "58ac9b18ebdcf116c6379fed"
 *    }
-*
-* @apiSuccess (201) {String} _id Id de constructora, asignado por la BD, es único en toda la base de datos.
-* @apiSuccess (201) {String} updatedAt Estampa de tiempo de la última actualización de los datos en la BD.
-* @apiSuccess (201) {String} createdAt Estampa de tiempo de la creación en la BD.
-*
-* @apiError (500) {String} Error  Mensaje de error del servidor, a la hora de crear la desarrolladora.
+* @apiSuccess (Success 201) {Object} builder Objeto con los datos de la constructora, como se encuentran guardados en la base de datos.
 */
 module.exports = (router, Builder) => {
   router.post('/builder', (req, res) => {

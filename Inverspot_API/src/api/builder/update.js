@@ -5,6 +5,9 @@
 * @apiGroup Constructor
 * @apiDescription Búsqueda de constructora por id para actualizar.
 * @apiPermission admin
+* @apiUse authHeaders
+* @apiUse successUpdate
+* @apiUse errorsAPI
 *
 * @apiParamExample {json} Body
 *     {
@@ -29,10 +32,6 @@
 *     	"completedWorks": 10,
 *     	"website": "www.google.com"
 *     }
-*
-* @apiSuccess (201) {String} updatedAt Estampa de tiempo de la última actualización de los datos en la BD.
-*
-* @apiError (500) {String} Error  Mensaje de error del servidor, a la hora de actualizar la desarrolladora.
 */
 module.exports = (router, Builder) => {
   router.put('/builder', (req, res) => {
