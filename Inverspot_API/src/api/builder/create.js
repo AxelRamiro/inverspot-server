@@ -11,7 +11,7 @@
 *      "name": "Lorem AC",
 *      "yearsWork": 5,
 *      "completedWorks": 10,
-*      "website": "www.google.com",
+*      "website": "www.google.com"
 *    }
 *
 * @apiParam (Body) {String} name Nombre de la desarrolladora o constructora.

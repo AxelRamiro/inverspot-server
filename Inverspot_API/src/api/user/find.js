@@ -29,7 +29,7 @@
 *
 *  @apiSuccess (200 OK) {Array} user Array de usuarios, con el formato según query.
 *
-* @apiError (500) {String} Error  Mensaje de error del servidor, a la hora de actualizar.
+* @apiError (500) {String} Error  Mensaje de error del servidor, a la hora de buscar.
 */
 module.exports = (router, User) => {
   router.get('/user', (req, res) => {
