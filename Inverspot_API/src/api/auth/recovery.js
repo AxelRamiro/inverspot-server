@@ -4,6 +4,7 @@
 * @apiName Recuperación
 * @apiGroup Autenticación
 * @apiDescription Recuperación de contraseña, actualiza el estado del usuario a inactivo y emite un correo con token para cambiar contraseña.
+* @apiUse errorsAPI
 *
 * @apiParamExample {json} Query
 *   {
@@ -15,13 +16,12 @@
 * @apiSuccessExample {String} 200
 *    OK
 *
-* @apiErrorExample {String} 500
-*   ERROR
+* @apiSuccess OK El usuario ha sido encontrado y el correo para recuperación de contraseña está siendo enviado.
+*
 * @apiErrorExample {String} 404
 *   NOT_FOUND
 *
-* @apiError (500) {String} Error  Mensaje de error del servidor, a la hora de buscar en las base de datos.
-* @apiError (404) {String} NOT_FOUND  No fue encontrado un usuario con ese email.
+* @apiError (Error) NOT_FOUND  No fue encontrado un usuario con ese email.
 *
 */
 module.exports = (router, User, sendMail) => {

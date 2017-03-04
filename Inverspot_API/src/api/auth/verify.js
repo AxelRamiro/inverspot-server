@@ -4,6 +4,7 @@
 * @apiName Verificación
 * @apiGroup Autenticación
 * @apiDescription Verificación de correo, activación de cuenta y cambio de contraseña, mediante codigo UUID v4.
+* @apiUse errorsAPI
 *
 * @apiParamExample {json} Query
 *   {
@@ -20,17 +21,13 @@
 *     "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6Ikp..."
 *   }
 *
-* @apiSuccess (200 OK) {Object} user Objeto de usuario, tal como lo manda la base de datos, ya activado e invalidado el token UUID.
-* @apiSuccess (200 OK) {String} token Token de sesión JWT(Json Web Token), no tiene caducacion.
+* @apiSuccess (Success 200) {Object} user Objeto de usuario, tal como lo manda la base de datos, ya activado e invalidado el token UUID.
+* @apiSuccess (Success 200) {String} token Token de sesión JWT(Json Web Token), no tiene caducacion.
 *
-* @apiErrorExample {String} 500
-*   ERROR
 * @apiErrorExample {String} 404
 *   NOT_FOUND
 *
-* @apiError (500) {String} Error  Mensaje de error del servidor, a la hora de buscar en las base de datos.
-* @apiError (404) {String} NOT_FOUND  No fue encontrado un usuario con ese token.
-*
+* @apiError (Error) NOT_FOUND  No fue encontrado un usuario con ese token.
 */
 
 module.exports = (router, User, jwt, config, sendMail) => {

@@ -4,6 +4,8 @@
 * @apiName Registrar
 * @apiGroup Autenticación
 * @apiDescription Registro de usuarios, crear usuarios sin necesidad de tener un JWT.
+* @apiUse headersPublic
+* @apiUse errorsAPI
 *
 * @apiParamExample {json} Body
 *   {
@@ -29,11 +31,8 @@
 *
 * @apiSuccessExample {String} 201
 *     CREATED
-* @apiSuccessExample {String} 500
-*     ERROR
-*
-* @apiError (500) {String} ERROR  Mensaje de error del servidor, a la hora de crear el usuario.
-* @apiError (201) {String} CREATED  Usuario creado exitosamente, y correo enviado para activacion de cuenta.
+
+* @apiSuccess (Success 201) CREATED  Usuario creado exitosamente, y correo enviado para activacion de cuenta.
 */
 module.exports = (router, User, sendMail) => {
   router.post('/auth/signup', (req, res) => {

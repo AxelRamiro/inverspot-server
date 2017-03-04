@@ -4,6 +4,8 @@
 * @apiName Autenticación
 * @apiGroup Autenticación
 * @apiDescription Autenticación de usuarios y generación de Json Web Token (JWT) para permisos, a través de validacion de email y password.
+* @apiUse headersPublic
+* @apiUse errorsAPI
 *
 * @apiParamExample {json} Body
 *   {
@@ -20,11 +22,9 @@
 *     "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6Ikp..."
 *   }
 *
-* @apiSuccess (200 OK) {Object} user Objeto de usuario, tal como lo manda la base de datos.
-* @apiSuccess (200 OK) {String} token Token de sesión JWT(Json Web Token), no tiene caducacion.
+* @apiSuccess (Success 200) {Object} user Objeto de usuario encontrado, tal como lo manda la base de datos.
+* @apiSuccess (Success 200) {String} token Token de sesión JWT(Json Web Token), no tiene caducacion.
 *
-* @apiErrorExample {String} 500
-*   ERROR
 * @apiErrorExample {String} 404
 *   NOT_FOUND
 * @apiErrorExample {String} 401
@@ -32,10 +32,9 @@
 * @apiErrorExample {String} 400
 *   BAD_PARAMS
 *
-* @apiError (500) {String} Error  Mensaje de error del servidor, a la hora de buscar en las base de datos.
-* @apiError (404) {String} NOT_FOUND  No fue encontrado un usuario con ese email.
-* @apiError (401) {String} UNAUTHORIZED  El usuario tiene el estatus inactivo.
-* @apiError (400) {String} BAD_PARAMS  La contraseña es incorrecta.
+* @apiError (Error) NOT_FOUND  No fue encontrado un usuario con ese email.
+* @apiError (Error) UNAUTHORIZED  El usuario tiene el estatus inactivo.
+* @apiError (Error) BAD_PARAMS  La contraseña es incorrecta.
 */
 
 module.exports = (router, User, jwt, config) => {
