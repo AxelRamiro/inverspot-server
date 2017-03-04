@@ -4,6 +4,7 @@
 * @apiName Búsqueda de Constructor
 * @apiGroup Constructor
 * @apiDescription Búsqueda de constructores bajo criterios personalizados y respuestas personalizadas (sort, limit, select). Al realizar búsquedas sin criterios (filtros) devuelve todos los registros.
+* @apiPermission admin
 *
 * @apiParamExample {json} Query
 *    {
@@ -35,7 +36,7 @@ module.exports = (router, Builder) => {
     let select = req.query.select || null
     let query = req.query.query ? JSON.parse(req.query.query) : null
 
-    // regresa la respuesta en arreglo de la busqueda, aun si no encuentra algo en la busqueda regresa []
+    // regresa la respuesta en arreglo de la búsqueda, aun si no encuentra algo en la búsqueda regresa []
     Builder.find(filter,select,query,(err,builder) => {
       if (err) return res.status(500).send(err.message)
       res.status(200).jsonp(builder)

@@ -32,7 +32,7 @@
 *
 * @apiSuccess (201) {String} updatedAt Estampa de tiempo de la última actualización de los datos en la BD.
 *
-* @apiError (500) {String} Error  Mensaje de error del servidor, a la hora de crear la desarrolladora.
+* @apiError (500) {String} Error  Mensaje de error del servidor, a la hora de actualizar la desarrolladora.
 */
 module.exports = (router, Builder) => {
   router.put('/builder', (req, res) => {
