@@ -82,13 +82,18 @@
 */
 module.exports = (router, Property, upload) => {
   router.put('/property', upload.single('image'), (req, res) => {
+    // Recupera los datos enviados en la petición.
     let property = JSON.parse(req.body.property)
+    // verifica si se envio un archivo y recupera el nombre
     if (req.file) property.image = req.file.filename
-    property.status = (property.dataSheet.totalShares > property.dataSheet.sharesSold) ? 'available' : 'fund'
+    // Busca y actualiza por Id el avance de obra, regresa el documento actualizado
     Property.findByIdAndUpdate(property._id, property, {new: true},(err, resProperty) => {
 
       if (err)
         return res.status(500).send(err.message)
+      // verifica el estado de la propiedad según el total de participaciones y las participaciones vendidas, lo actualiza en caso de ser necesario.
+      resProperty.status = (resProperty.dataSheet.totalShares > resProperty.dataSheet.sharesSold) ? 'available' : 'fund'
+      resProperty.save()
       res.status(200).jsonp(resProperty)
     })
   })
