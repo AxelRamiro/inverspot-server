@@ -10,10 +10,10 @@
   },
   "from" : "\"Inverspot\" <no-reply@inverspot.mx>",
   "cc": "\"Contacto\" <villak@startuphidalgo.com>",
-  "domain": "http://192.169.174.96/",
-  "imagesUrl": "http://192.169.174.96/is-img/",
-  "logoImg": "http://192.169.174.96/is-img/9ff1961d-0e06-4dba-928b-58e1c1771bfd.png",
-  "adminUserUrl": "http://192.169.174.96/user/",
-  "recoveryURL": "http://192.169.174.96/user/#/recovery/",
-  "recoveryUrlAdmin": "http://192.169.174.96/#/change-pass/"
+  "domain": "http://inverspot.mx/",
+  "imagesUrl": "http://inverspot.mx/is-img/",
+  "logoImg": "http://inverspot.mx/is-img/9ff1961d-0e06-4dba-928b-58e1c1771bfd.png",
+  "adminUserUrl": "http://inverspot.mx/admin/",
+  "recoveryURL": "http://inverspot.mx/#/recovery/",
+  "recoveryUrlAdmin": "http://inverspot.mx/admin/#/change-pass/"
 }
