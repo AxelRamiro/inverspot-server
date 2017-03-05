@@ -4,6 +4,7 @@ let db = require('./db.json')
 db.dbUri = `mongodb://${db.dbCloud.user}:${db.dbCloud.password}@${db.dbCloud.address}:${db.dbCloud.port}/${db.dbCloud.database}`
 //db.dbUri = `mongodb://${db.dbLocal.address}:${db.dbLocal.port}/${db.dbLocal.database}`
 
+// Exporta todas las configuraciones de la API, se encuentran separadas en archivos JSON.
 module.exports = {
   server: require('./server.json'),
   db: db,

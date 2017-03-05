@@ -1,3 +1,5 @@
+// Modelado de datos para manejar los avance de obra
+// se exporta como un modelo de mongoose WorkProgress, con esto podremos hacer un CRUD a los datos del avance de obras.
 module.exports = (mongoose) => {
 
   let workProgressSchema = new mongoose.Schema({

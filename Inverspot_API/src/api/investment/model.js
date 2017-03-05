@@ -1,3 +1,5 @@
+// Modelado de datos para manejar las Inversiones
+// se exporta como un modelo de mongoose Investment, con esto podremos hacer un CRUD a los datos de las inversiones.
 module.exports = (mongoose) => {
 
   let investmentSchema = new mongoose.Schema({
