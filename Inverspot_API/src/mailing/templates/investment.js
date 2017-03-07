@@ -303,7 +303,7 @@ module.exports = (params, config, currency) => {
                                   <div align="center" style="line-height: 24px;">
                                       <font face="AvenirNext-Bold" size="3" color="#000" style="font-size: 22px;">
                                           <strong style="font-family: AvenirNext-Bold; font-size: 22px; color: black;">
-                                              <a href="${config.mailing.adminUserUrl}" class="button large-invertion" style="width: 60%;">Administrar</a>
+                                              <a href="http://inverspot.mx" class="button large-invertion" style="width: 60%;">Administrar</a>
                                           </strong>
                                       </font>
                                   </div>
