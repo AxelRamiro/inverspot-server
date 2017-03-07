@@ -20,11 +20,17 @@ mongoose.Promise = Promise
 mongoose.connect(config.db.dbUri)
 mongoose.set('debug', config.db.debug);
 //  /Database config
+
+// Server config
 app.set('port', process.env.PORT || config.server.port)
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json({limit: '2mb'}))
 app.use(morgan('dev'))
 app.use(passport.initialize())
+// Sirve carpeta estática para documentación de API
+app.use(`${config.server.apidocUrl}`, express.static('apidoc'))
+// / Server config
+
 // Authenticate config
 const authenticate = jwtMiddleware({
   secret: config.auth.secret,
@@ -37,6 +43,7 @@ const authenticate = jwtMiddleware({
    return null;
  }
 }).unless({
+// Rutas que no requieren autenticarse
   path: [
     '/api/auth',
     /^\/api\/auth\/.*/, // -----> Quit authenticate path /api/auth/...
@@ -61,9 +68,11 @@ const errorAuthenticate = (err, req, res, next) => {
 // Update File Configurate
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
+    // Configuración de locación de los documentos que se suban por la API
     cb (null, config.server.uploadPath)
   },
   filename: (req, file, cb) => {
+    // Rename file
     cb (null,  `${uuid.v4()}${path.extname(file.originalname)}`)
   }
 })
@@ -79,7 +88,7 @@ app.use((req, res, next) => {
 
 
 app.get ('/', (req,res) => {
-  res.status(200).send('Hello Word!')
+  res.status(200).send('Bienvenido a Inverspot API')
 })
 // Init module Mailing
 const sendMail = require('./src/mailing')(config)

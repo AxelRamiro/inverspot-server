@@ -1,3 +1,5 @@
+// Modelado de datos para manejar las constructoras
+// se exporta como un modelo de mongoose Builder, con esto podremos hacer un CRUD a los datos de las constructoras.
 module.exports = (mongoose) => {
 
   let builderSchema = new mongoose.Schema({
